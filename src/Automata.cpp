@@ -1,7 +1,7 @@
 // Copyright 2020 Dev-will-work
-#include <cstdlib>
 #include <iostream>
-#include "Automata.h"
+#include <ctime>
+#include "automata.h"
 Automata::Automata() {
   this->state = STATES::OFF;
   this->all_income = 0;
@@ -67,8 +67,12 @@ void Automata::cancel() {
 
 void Automata::cook(std::string name) {
   if (this->state != STATES::CHECK) return;
+  time_t start = time(0);
+  time_t end = time(0) + 15;
+  while (start < end) {
+    start = time(0);
+  }
   this->state = STATES::COOK;
-  _sleep(3000);
   finish();
 }
 

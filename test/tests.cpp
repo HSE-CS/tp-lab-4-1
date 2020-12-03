@@ -1,6 +1,6 @@
 //Copyright 2020 Dev-will-work
 #include "gtest/gtest.h"
-#include "Automata.h"
+#include "automata.h"
 
 TEST(Automate, on_creation) {
   Automata automate;
