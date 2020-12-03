@@ -1,7 +1,7 @@
 // Copyright Stanislav Stoianov
 
 #include "gtest/gtest.h"
-#include "automata.h"
+#include "../include/Automata.h"
 
 TEST(initialize, expect_no_error) {
     Automata machine;
