@@ -1,7 +1,7 @@
 #include <iostream>
 #include <map>
 #include <string>
-#include "automata.h"
+#include "Automata.h"
 
 static string endL = "\n";
 
