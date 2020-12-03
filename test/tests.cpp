@@ -63,8 +63,8 @@ TEST(automata, test7) {
     automata.coin(100);
     automata.getMenu();
     automata.choice("tea");
-    long expected = 70;
-    EXPECT_EQ(expected, automata.getCash());
+    bool expected = true;
+    EXPECT_EQ(expected, automata.check());
 }
 
 TEST(automata, test8) {
@@ -73,8 +73,8 @@ TEST(automata, test8) {
     automata.coin(13);
     automata.getMenu();
     automata.choice("tea");
-    long expected = 13;
-    EXPECT_EQ(expected, automata.getCash());
+    bool expected = false;
+    EXPECT_EQ(expected, automata.check());
 }
 
 TEST(automata, test9) {
@@ -87,6 +87,6 @@ TEST(automata, test9) {
     automata.getMenu();
     automata.choice("chocolate");
 
-    long expected = 90;
-    EXPECT_EQ(expected, automata.getCash());
+    bool expected = true;
+    EXPECT_EQ(expected, automata.check());
 }
