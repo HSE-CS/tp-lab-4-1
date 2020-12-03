@@ -44,6 +44,7 @@ class Automata {
      void on();
      void off();
      void coin(int);
+     int getCoin();
      //std::string* getMenu();
      std::string getMenu();
      unsigned getState();
@@ -54,6 +55,6 @@ class Automata {
      //void cook(unsigned);
      void cook();
      void finish();
-     int getCoin();
+    
 };
 #endif  // INCLUDE_AUTOMATA_H_
