@@ -18,7 +18,7 @@ std::vector<DRINK>Automata::menu = {
 bool Automata::off(){
 	if (this->state == WAIT) {
 		this->state = OFF;
-                return 1;
+        return 1;
 	}
 	else {
 		return 0;

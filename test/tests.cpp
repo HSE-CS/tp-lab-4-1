@@ -11,6 +11,7 @@ TEST(automata, test1) {
 
 TEST(automata, test2) {
 	Automata a;
+	a.on()
 	a.coin(30);
 	a.choice(2);
 	a.cancel();
