@@ -14,7 +14,7 @@ TEST(automata, test2) {
 	a.coin(30);
 	a.choice(2);
 	a.cancel();
-	int expected = 1;
+	bool expected = true;
 	EXPECT_EQ(expected, a.off());
 }
 
@@ -45,7 +45,7 @@ TEST(automata, test6) {
 	Automata a;
 	a.on();
 	a.coin(20);
-	a.choice(1);
+	a.choice(0);
 	double expected = 0;
 	EXPECT_EQ(expected, a.getCash());
 }
