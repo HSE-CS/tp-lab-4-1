@@ -4,17 +4,8 @@ Automata::Automata()
 {
     this->cash = 0;
     this->state = OFF;
-    std::ifstream menuF("menu.txt");
-    std::ifstream priceF("price.txt");
-    while (!menuF.eof())
-    {
-        std::string tmpStr;
-        menuF >> tmpStr;
-        this->menu.push_back(tmpStr);
-        double tmpD;
-        priceF >> tmpD;
-        this->price.push_back(tmpD);
-    }
+    this->menu.push_back("tea");
+    this->price.push_back(2);
     
 }
 
