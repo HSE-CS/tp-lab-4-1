@@ -64,7 +64,6 @@ void Automata::check() {
 void Automata::cancel() {
     if (this->state == CHECK || this->state == ACCEPT) {
         std::cout << "Your money was sent back: " << this->client_cash << std::endl;
-        this->cash -= this->client_cash;
         this->client_cash = 0;
         this->client_choice = 0;
         this->state = WAIT;
