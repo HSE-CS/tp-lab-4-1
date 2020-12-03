@@ -89,7 +89,7 @@ TEST(avtomat, test9)
     automata.on();
     automata.coin(60);
     automata.choice(1);
-    EXPECT_DOUBLE_EQ(0.1, automata.getCash());
+    EXPECT_NEAR(0.1, automata.getCash(), 1e-5);
 }
 
 TEST(avtomat, test10)
@@ -99,7 +99,7 @@ TEST(avtomat, test10)
     Automata automata{menu, price};
     automata.on();
     automata.coin(40);
-    EXPECT_FALSE(automata.check(0));
+    EXPECT_TRUE(automata.check(0));
 }
 
 TEST(avtomat, test11)
