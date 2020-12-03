@@ -1,7 +1,7 @@
 // Copyright 2020 Dev-will-work
 #include <iostream>
 #include <ctime>
-#include "automata.h"
+#include "Automata.h"
 Automata::Automata() {
   this->state = STATES::OFF;
   this->all_income = 0;

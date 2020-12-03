@@ -1,6 +1,6 @@
 // Copyright 2020 Dev-will-work
 #include <iostream>
-#include "automata.h"
+#include "Automata.h"
 
 int main() {
   Automata automate;
