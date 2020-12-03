@@ -3,7 +3,7 @@
 #include <iostream>
 #include <cstring>
 #include <thread>
-#include "../include/automata.h"
+#include "../include/Automata.h"
 
 char *getCurrentTime() {
   time_t mytime = time(nullptr);

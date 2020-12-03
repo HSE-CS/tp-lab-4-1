@@ -1,6 +1,6 @@
 // Copyright Stanislav Stoianov
 
-#include "../include/automata.h"
+#include "../include/Automata.h"
 
 int main() {
   auto *automata = new Automata();
