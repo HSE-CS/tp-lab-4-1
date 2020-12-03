@@ -2,7 +2,7 @@
 
 #include <stdio.h>
 #include <iostream>
-#include "automata.h"
+#include "Automata.h"
 
 Automata::Automata() {
   this->cur_state = OFF;
