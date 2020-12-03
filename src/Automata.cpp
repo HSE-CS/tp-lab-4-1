@@ -97,7 +97,7 @@ void Automata::finish(int sel) {
 
 void Automata::choice(int sel) {
 	if (this->state == ACCEPT) {
-		if (sel <= 4 and sel > 0) {
+		if (sel < 4 and sel >= 0) {
 			this->state = CHECK;
 			std::cout << menu[sel].name << " was chosen" << std::endl;
 			check(sel);
