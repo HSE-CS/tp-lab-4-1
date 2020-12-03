@@ -37,7 +37,7 @@ class Automata {
          0
      };
      unsigned m_size = 7;
-     unsigned choice;
+     unsigned choices;
      unsigned state;
  public:
      Automata();
