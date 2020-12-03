@@ -9,7 +9,7 @@ void delay(clock_t sec)
 {
 	clock_t start_time = clock();
 	clock_t end_time = sec + start_time;
-	while (clock() != end_time);
+	while (clock() < end_time);
 }
 
 Automata::Automata()
