@@ -1,4 +1,4 @@
-#include "gtest/gtest.h"
+#include <gtest/gtest.h>
 #include "Automata.h"
 
 TEST(test_off, test1)
