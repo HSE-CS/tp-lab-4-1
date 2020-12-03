@@ -1,7 +1,7 @@
 #include<vector>
 #include<iostream>
 #include<map>
-#include "Automata.h"
+#include "automata.h"
 #include <unistd.h>
 using namespace std;
 
