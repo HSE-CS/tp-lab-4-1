@@ -12,7 +12,7 @@ TEST(automata, test1) {
 TEST(automata, test2) {
 	Automata a;
 	a.coin(30);
-	a.choise(2);
+	a.choice(2);
 	a.cancel();
 	int expected = 1;
 	EXPECT_EQ(expected, a.off());
