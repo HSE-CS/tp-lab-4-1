@@ -1,6 +1,6 @@
 set(header_path "${${PROJECT_NAME}_SOURCE_DIR}/include")
-set(header ${header_path}/Automata.h)
-set(src Automata.cpp)
+set(header ${header_path}/automata.h)
+set(src automata.cpp)
 
 
 add_library(${PROJECT_NAME} SHARED
