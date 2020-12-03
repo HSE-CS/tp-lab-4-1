@@ -5,36 +5,55 @@
 #include <iostream>
 #include <string>
 
-
+enum STATES {
+    OFF,
+    WAIT,
+    ACCEPT,
+    CHECK,
+    COOK
+};
 
 class Automata {
  private:
-    /* cash - для хранения текущей суммы;
-     menu - массив строк названий напитков(может подгружаться из файла);
-     prices - массив цен напитков(соответствует массиву menu);
-     state - текущее состояние автомата;*/
+     int cash; 
+     std::string menu[8] = { 
+         "...",
+         "...",
+         "...",
+         "...",
+         "...", 
+         "...",
+         "...",
+         "..."
+     };
+     int prices[8] = { 
+         0, 
+         0,
+         0,
+         0,
+         0,
+         0,
+         0,
+         0
+     };
+     unsigned m_size = 7;
+     unsigned choice;
+     unsigned state;
  public:
      Automata();
-     //конструктор
-     //    on() - включение автомата;
-     //off() - выключение автомата;
-     //coin() - занесение денег на счёт пользователем;
-     //getMenu() - считывание меню с напитками и ценами для пользователя;
-     //getState() - считывание текущего состояния для пользователя;
-     //choice() - выбор напитка пользователем;
-     //check() - проверка наличия необходимой суммы;
-     //cancel() - отмена сеанса обслуживания пользователем;
-     //cook() - имитация процесса приготовления напитка;
-     //finish() - завершение обслуживания пользователя.
-     //void on();
-     //void off();
-     //bool coin(int chash);
+     void on();
+     void off();
+     void coin(int);
      //std::string* getMenu();
-     //STATES getState();
-     //void choice(int number);
-     //bool check();
-     //void cancel();
-     //void cook();
-     //void finish();
+     std::string getMenu();
+     unsigned getState();
+     void choice(unsigned);
+     //void check(unsigned);
+     void check();
+     void cancel();
+     //void cook(unsigned);
+     void cook();
+     void finish();
+     int getCoin();
 };
 #endif  // INCLUDE_AUTOMATA_H_
