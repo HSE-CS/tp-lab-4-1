@@ -67,6 +67,6 @@ TEST(AutomataTest, test9) {
 TEST(AutomataTest, test10) {
     Automata test;
     test.on();
-    std::string menu = "1 Americano 25\n2 Espresso 35\n3 Cappuccino 40\n4 Long Black 38\n5 Hot Chocolate 30";
+    std::string menu = "1 Americano 25\n2 Espresso 35\n3 Cappuccino 40\n4 Long Black 38\n5 Hot Chocolate 30\n";
     EXPECT_EQ(test.getMenu(), menu);        // проверка меню
 }
