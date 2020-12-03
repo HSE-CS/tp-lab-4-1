@@ -61,32 +61,26 @@ TEST(automata, test7) {
     Automata automata;
     automata.on();
     automata.coin(100);
-    automata.getMenu();
-    automata.choice("tea");
     bool expected = true;
-    EXPECT_EQ(expected, automata.check());
+    EXPECT_EQ(expected, automata.check("tea"));
 }
 
 TEST(automata, test8) {
     Automata automata;
     automata.on();
     automata.coin(13);
-    automata.getMenu();
-    automata.choice("tea");
     bool expected = false;
-    EXPECT_EQ(expected, automata.check());
+    EXPECT_EQ(expected, automata.check("tea"));
 }
 
 TEST(automata, test9) {
     Automata automata;
     automata.on();
     automata.coin(200);
-    automata.getMenu();
     automata.choice("coffee");
     automata.coin(200);
     automata.getMenu();
-    automata.choice("chocolate");
 
     bool expected = true;
-    EXPECT_EQ(expected, automata.check());
+    EXPECT_EQ(expected, automata.check("chocolate"));
 }
