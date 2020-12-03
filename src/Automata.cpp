@@ -93,7 +93,7 @@ void Automata::cook()
 {
     this->bank += prices[this->option];
     this->cash -= prices[this->option];
-    _sleep(6500);
+   // _sleep(6500);
     cout << "DONE" << endl;
 }
 
