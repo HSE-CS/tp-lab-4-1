@@ -41,7 +41,7 @@ TEST(test_cancdrink, test6)
 {
     Automata A;
     A.on();
-    A.coin(20)
+    A.coin(20);
     EXPECT_EQ(20, A.choice("milk"));
 }
 
@@ -49,7 +49,7 @@ TEST(test_drink, test7)
 {
     Automata A;
     A.on();
-    A.coin(13)
+    A.coin(13);
     EXPECT_EQ(3, A.choice("hot water"));
 }
 
