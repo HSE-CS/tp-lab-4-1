@@ -1,30 +1,30 @@
 // Copyright 2020 GHA Test Team
 #include "Automata.h"
-#include "windows.h"
-#include <fstream>
+//#include "windows.h"
+//#include <fstream>
 
-void Automata::get_menu_data_from_file(std::string file_name) {
-  std::string line;
-  std::ifstream file("data.txt"); 
-  if (file.is_open()){
-    while (getline(file, line)){
-      // std::cout << line << std::endl;
-      std::string name;
-      std::string price;
-      bool name_flag = true;
-      for (int i = 0; i < line.size(); i++) {
-        if (name_flag && line[i] != ' ')
-          name += line[i];
-        if (!name_flag)
-          price += line[i];
-        if (line[i] == ' ')
-          name_flag = false;
-      }
-      set_name_and_price(name, atof(price.c_str()));
-    }
-  }
-  file.close();     
-}
+// void Automata::get_menu_data_from_file(std::string file_name) {
+//   std::string line;
+//   std::ifstream file("data.txt"); 
+//   if (file.is_open()){
+//     while (getline(file, line)){
+//       // std::cout << line << std::endl;
+//       std::string name;
+//       std::string price;
+//       bool name_flag = true;
+//       for (int i = 0; i < line.size(); i++) {
+//         if (name_flag && line[i] != ' ')
+//           name += line[i];
+//         if (!name_flag)
+//           price += line[i];
+//         if (line[i] == ' ')
+//           name_flag = false;
+//       }
+//       set_name_and_price(name, atof(price.c_str()));
+//     }
+//   }
+//   file.close();     
+// }
 
 void Automata::set_name_and_price(std::string name, double price) {
   menu[name] = price;
@@ -114,7 +114,7 @@ double Automata::cancel() {
 void Automata::cook() {
   if (state == STATES::CHECK && check()) {
     state = STATES::COOK;
-    Sleep(2500);
+    //Sleep(2500);
   }
 }
 
