@@ -36,7 +36,7 @@ TEST(automata, test5) {
   a.on();
   a.addCash(10);
   a.choice("Cofee");
-  a.cancel()
+  a.cancel();
   STATES expected = WAIT;
   EXPECT_EQ(expected, a.getState());
 }
@@ -86,7 +86,7 @@ TEST(automata, test11) {
 TEST(automata, test12) {
   Automata a;
   a.on();
-  a.off()
+  a.off();
   STATES expected = OFF;
   EXPECT_EQ(expected, a.getState());
 }
