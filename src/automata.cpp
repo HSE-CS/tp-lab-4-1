@@ -1,4 +1,4 @@
-#include "automata.h"
+#include "Automata.h"
 
 vector<string>new_menu{"hot water","milk","americano","espresso","capuchino","hot chocolate","double chocolate"};
 vector<int>new_prices{10,22,35,27,42,40,50};
