@@ -99,6 +99,6 @@ void Automata::cook()
 	{
 		state = COOK;
 		this->cash -= prices[drink_index];
-		this->drink_index = NULL;
+		this->drink_index = 0;
 	}
 }
