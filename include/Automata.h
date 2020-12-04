@@ -4,8 +4,9 @@
 #include <cmath>
 #include <iostream>
 #include <string>
+#include <ctime>
 
-enum STATES {
+enum STATUS {
     OFF,
     WAIT,
     ACCEPT,
@@ -45,16 +46,15 @@ class Automata {
      void off();
      void coin(int);
      int getCoin();
-     //std::string* getMenu();
      std::string getMenu();
      unsigned getState();
+     int getChoice();
+     std::string retChoice();
      void choice(unsigned);
-     //void check(unsigned);
      void check();
      void cancel();
-     //void cook(unsigned);
      void cook();
      void finish();
-    
+     std::string error_automata(unsigned);
 };
 #endif  // INCLUDE_AUTOMATA_H_
