@@ -62,7 +62,6 @@ void Automata::cancel() {
 }
 void Automata::cook() {
 	if (this->state != OFF) {
-		Sleep(5000);
 		// cout << "Enjoy your drink!" << "\n";
 		finish();
 	}
