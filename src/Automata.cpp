@@ -3,7 +3,6 @@
 
 #include <iostream>
 #include <string>
-#include <Windows.h>
 
 
 Automata::Automata() {
@@ -15,7 +14,6 @@ void Automata::on() {
 	if (this->state == STATES::OFF)
 	{
 		std::cout << "Turning on..." << std::endl;
-		Sleep(3000);
 		this->state = STATES::WAIT;
 		std::cout << "The machine is ready to work." << std::endl;
 		std::cout << " " << std::endl;
@@ -29,7 +27,6 @@ void Automata::off() {
 	if (this->state == STATES::WAIT) {
 		this->state = STATES::OFF;
 		std::cout << "Turning off..." << std::endl;
-		Sleep(4000);
 		std::cout << "The machine is off." << std::endl;
 	}
 	else 
@@ -41,7 +38,6 @@ double Automata::coin(double cash) {
 		this->state = STATES::ACCEPT;
 		this->cash += cash;
 		std::cout << "Credited: " << cash << std::endl;
-		Sleep(1000);
 		std::cout << "Your balance: " << this->cash << std::endl;
 		return this->cash;
 	}
@@ -108,14 +104,11 @@ void Automata::cook(int num) {
 		this->state = COOK;
 		this->cash -= this->prices[num - 1];
 		std::cout << "Cooking... " << std::endl;
-		Sleep(5000);
 		finish();
 	}
 	else {
 		std::cout << "Error. I can not cook on this stage." << std::endl;
 	}
-	
-
 }
 
 void Automata::finish() {
