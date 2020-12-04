@@ -1,5 +1,4 @@
 #include "Automata.h"
-#include "windows.h"
 #include <string>
 // Copyright 2020 GN
 #include <iostream>
