@@ -5,7 +5,7 @@
 TEST(AtomataTest, off) {
   Automata automata;
 
-  EXPECT_EQ(STATE::OFF, automata.getState());
+  EXPECT_EQ(STATE::WAIT, automata.getState());
 }
 
 TEST(AtomataTest, on) {
