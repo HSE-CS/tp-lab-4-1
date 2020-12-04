@@ -42,7 +42,7 @@ TEST(AutomataTest, test4) {
 TEST(AutomataTest, test5) {
   Automata a(std::cout);
   a.on();
-  a.addToMenu("Juice 5$");
+  a.addToMenu("Juice $5");
   a.coin(5);
   a.choice(1);
   a.cook();
