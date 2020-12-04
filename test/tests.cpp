@@ -75,3 +75,20 @@ TEST(automata, off2)
     std::string expect = "OFF";
     EXPECT_EQ(expect, automata1.getState());
 }
+TEST(automata, finish)
+{
+    Automata automata1;
+    automata1.on();
+    automata1.coin(10);
+    automata1.finish();
+    std::string expect = "WAIT";
+    EXPECT_EQ(expect, automata1.getState());
+}
+TEST(automata, finish2)
+{
+    Automata automata1;
+    automata1.on();
+    automata1.coin(10);
+    automata1.finish();
+    EXPECT_EQ(10, automata1.getCoin());
+}
