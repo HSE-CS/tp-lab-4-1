@@ -50,9 +50,9 @@ const uint32_t VendingMachine::cancel() {
   switch (this->state) {
     case BEVERAGE_SELECTION:
       this->state = WAITING;
-      uint32_t balance = this->balance;
+      uint32_t _balance = this->balance;
       this->balance = 0;
-      return balance;
+      return _balance;
     default:
       std::cerr << "Called `cancel` while not in `BEVERAGE_SELECTION` state"
                 << std::endl;
