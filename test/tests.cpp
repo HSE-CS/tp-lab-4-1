@@ -34,7 +34,7 @@ TEST(vm, test3) {
 TEST(vm, test4) {
   VendingMachine v;
   v.on();
-  ASSERT_EQ(v.finish(), NULL);
+  ASSERT_EQ(v.finish(), "");
 }
 
 TEST(vm, test5) {
@@ -45,7 +45,7 @@ TEST(vm, test5) {
   v.removeBeverage(0);
   BeverageList list2 = v.getFullBeverageList();
   for (uint32_t i = 0; i < list2.size(); ++i){
-      ASSERT_EQ(list[i], list2[i]);
+      ASSERT_EQ(list[i].second, list2[i].second);
   }
 }
 
