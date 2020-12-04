@@ -1,6 +1,6 @@
 #include "Automata.h"
 
-#include <gtest/gtest.h>
+#include "gtest/gtest.h"
 #include <string>
 
 TEST(AutomataTest, test1) {
