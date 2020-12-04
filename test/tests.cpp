@@ -95,9 +95,5 @@ TEST(AutomataTest, test10) {
 
 TEST(AutomataTest, test11) {
 	Automata a;
-    EXPECT_EQ(a.getMenu(), "coffee -> 40\n"\
-		                   "cocao -> 45\n" \
-		                   "latte -> 50\n" \
-		                   "black tea -> 30\n"\
-		                   "green tea -> 35\n");
+    EXPECT_EQ(a.getMenu(), "Error, automata is off\n");
 }
