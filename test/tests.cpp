@@ -5,13 +5,15 @@
 
 TEST(AutomataTest, test1) {
 	Automata a;
-	EXPECT_EQ(OFF, a.getState());
+	int st = a.getState();
+	EXPECT_EQ(0, st);
 }
 
 TEST(AutomataTest, test2) {
 	Automata a;
 	a.on();
-	EXPECT_EQ(ON, a.getState());
+	int st = a.getState();
+	EXPECT_EQ(1, st);
 }
 
 TEST(AutomataTest, test3) {
@@ -36,7 +38,8 @@ TEST(AutomataTest, test5) {
     a.coin(10);
     a.choice("coffee");
     a.cancel(); 
-    EXPECT_EQ(WAIT, a.getState());
+	int st = a.getState();
+    EXPECT_EQ(1, st);
 }
 
 TEST(AutomataTest, test6) {
@@ -47,14 +50,16 @@ TEST(AutomataTest, test6) {
     a.check();
     a.cook();  
     a.finish();
-    EXPECT_EQ(WAIT, a.getState());
+	int st = a.getState();
+    EXPECT_EQ(1, st);
 }
 
 TEST(AutomataTest, test7) {
 	Automata a;
     a.on();
     a.coin(100);
-    EXPECT_EQ(ACCEPT, a.getState());
+	int st = a.getState();
+    EXPECT_EQ(2, st);
 }
 
 TEST(AutomataTest, test8) {
@@ -64,7 +69,8 @@ TEST(AutomataTest, test8) {
     a.choice("latte");
     a.check();
     a.cook();  
-    EXPECT_EQ(COOK, a.getState());
+	int st = a.getState();
+    EXPECT_EQ(4, st);
 }
 
 TEST(AutomataTest, test9) {
@@ -73,7 +79,8 @@ TEST(AutomataTest, test9) {
     a.coin(5);
     a.coin(5);
     a.coin(5);
-    EXPECT_EQ(ACCEPT, a.getState());
+	int st = a.getState();
+    EXPECT_EQ(2, st);
 }
 
 TEST(AutomataTest, test10) {
@@ -82,7 +89,8 @@ TEST(AutomataTest, test10) {
     a.coin(5);
     a.coin(5);
     a.coin(5);
-    EXPECT_EQ(ACCEPT, a.getState());
+	int st = a.getState();
+    EXPECT_EQ(2, st);
 }
 
 TEST(AutomataTest, test11) {
