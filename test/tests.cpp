@@ -26,7 +26,7 @@ TEST(automata, test3)
     automata.on();
     automata.off();
 
-    States tmp = automata.getState();
+    STATES tmp = automata.getState();
     EXPECT_EQ(STATES::OFF, tmp);
 }
 
