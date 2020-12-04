@@ -46,7 +46,7 @@ TEST(AtomataTest, wait) {
   automata.coin(60);
   automata.cancel();
 
-  EXPECT_TRUE(STATE::WAIT, automata.getState());
+  EXPECT_EQ(STATE::WAIT, automata.getState());
 }
 
 TEST(AtomataTest, check_1) {
@@ -54,7 +54,7 @@ TEST(AtomataTest, check_1) {
   automata.coin(60);
   automata.choice("Green tea");
 
-  EXPECT_True(true, automata.check());
+  EXPECT_TRUE(automata.check());
 }
 
 TEST(AtomataTest, check_2) {
@@ -62,7 +62,7 @@ TEST(AtomataTest, check_2) {
   automata.coin(20);
   automata.choice("Green tea");
 
-  EXPECT_TRUE(false, automata.check());
+  EXPECT_FALSE(automata.check());
 }
 
 TEST(AtomataTest, check_finish) {
