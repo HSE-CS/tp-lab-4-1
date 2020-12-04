@@ -50,8 +50,9 @@ const uint32_t VendingMachine::cancel() {
   switch (this->state) {
     case BEVERAGE_SELECTION:
       this->state = WAITING;
+      uint32_t balance = this->balance;
       this->balance = 0;
-      return this->balance;
+      return balance;
     default:
       std::cerr << "Called `cancel` while not in `BEVERAGE_SELECTION` state"
                 << std::endl;
@@ -117,7 +118,7 @@ const Beverage VendingMachine::finish() {
     default:
       std::cerr << "Called `finish` while not in `COOKING` state" << std::endl;
   }
-  return NULL;
+  return Beverage();
 }
 
 const uint32_t VendingMachine::getBalance(){

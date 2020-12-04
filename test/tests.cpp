@@ -34,7 +34,7 @@ TEST(vm, test3) {
 TEST(vm, test4) {
   VendingMachine v;
   v.on();
-  ASSERT_EQ(v.finish(), "");
+  ASSERT_STREQ(v.finish().c_str(), Beverage().c_str());
 }
 
 TEST(vm, test5) {
@@ -54,7 +54,7 @@ TEST(vm, test6) {
   v.on();
   v.select(0);
   ASSERT_EQ(v.getState(), WAITING);
-  v.insertCoins(10);
+  v.insertCoins(100);
   ASSERT_EQ(v.getState(), BEVERAGE_SELECTION);
   v.select(0);
   ASSERT_EQ(v.getState(), COOKING);
