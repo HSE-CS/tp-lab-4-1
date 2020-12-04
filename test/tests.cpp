@@ -36,7 +36,7 @@ TEST(AutomataTest, test5) {
     a.coin(10);
     a.choice("coffee");
     a.cancel(); 
-    EXPECT_EQ(WAIT, a.getStatus());
+    EXPECT_EQ(WAIT, a.getState());
 }
 
 TEST(AutomataTest, test6) {
@@ -47,14 +47,14 @@ TEST(AutomataTest, test6) {
     a.check();
     a.cook();  
     a.finish();
-    EXPECT_EQ(WAIT, a.getStatus());
+    EXPECT_EQ(WAIT, a.getState());
 }
 
 TEST(AutomataTest, test7) {
 	Automata a;
     a.on();
     a.coin(100);
-    EXPECT_EQ(ACCEPT, a.getStatus());
+    EXPECT_EQ(ACCEPT, a.getState());
 }
 
 TEST(AutomataTest, test8) {
@@ -64,7 +64,7 @@ TEST(AutomataTest, test8) {
     a.choice("latte");
     a.check();
     a.cook();  
-    EXPECT_EQ(COOK, a.getStatus());
+    EXPECT_EQ(COOK, a.getState());
 }
 
 TEST(AutomataTest, test9) {
@@ -73,7 +73,7 @@ TEST(AutomataTest, test9) {
     a.coin(5);
     a.coin(5);
     a.coin(5);
-    EXPECT_EQ(ACCEPT, a.getStatus());
+    EXPECT_EQ(ACCEPT, a.getState());
 }
 
 TEST(AutomataTest, test10) {
@@ -82,7 +82,7 @@ TEST(AutomataTest, test10) {
     a.coin(5);
     a.coin(5);
     a.coin(5);
-    EXPECT_EQ(ACCEPT, a.getStatus());
+    EXPECT_EQ(ACCEPT, a.getState());
 }
 
 TEST(AutomataTest, test11) {
