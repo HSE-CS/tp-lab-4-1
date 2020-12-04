@@ -47,10 +47,10 @@ void VendingMachine::insertCoins(const uint32_t c) {
 }
 
 const uint32_t VendingMachine::cancel() {
+  const uint32_t _balance = this->balance;
   switch (this->state) {
     case BEVERAGE_SELECTION:
       this->state = WAITING;
-      uint32_t _balance = this->balance;
       this->balance = 0;
       return _balance;
     default:
