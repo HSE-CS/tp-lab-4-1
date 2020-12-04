@@ -2,46 +2,46 @@
 #include <gtest/gtest.h>
 #include "Automata.h"
 
-TEST(AtomataTest, off){
+TEST(AtomataTest, off) {
   Automata automata;
 
   EXPECT_EQ(STATE::OFF, automata.getState());
 }
 
-TEST(AtomataTest, on){
+TEST(AtomataTest, on) {
   Automata automata;
   automata.on();
 
   EXPECT_EQ(STATE::WAIT, automata.getState());
 }
 
-TEST(AtomataTest, accept_1){
+TEST(AtomataTest, accept_1) {
   Automata automata;
   automata.coin(30);
 
   EXPECT_EQ(STATE::ACCEPT, automata.getState());
 }
 
-TEST(AtomataTest, accept_2){
+TEST(AtomataTest, accept_2) {
   Automata automata;
   automata.coin(30);
   automata.coin(30);
   EXPECT_EQ(STATE::ACCEPT, automata.getState());
 }
 
-TEST(AtomataTest, cash){
+TEST(AtomataTest, cash) {
   Automata automata;
   automata.coin(60);
   EXPECT_EQ(60, automata.getCash());
 }
 
-TEST(AtomataTest, cancel){
+TEST(AtomataTest, cancel) {
   Automata automata;
   automata.coin(60);
   EXPECT_EQ(60, automata.cancel());
 }
 
-TEST(AtomataTest, wait){
+TEST(AtomataTest, wait) {
   Automata automata;
   automata.coin(60);
   automata.cancel();
@@ -49,7 +49,7 @@ TEST(AtomataTest, wait){
   EXPECT_TRUE(STATE::WAIT, automata.getState());
 }
 
-TEST(AtomataTest, check_1){
+TEST(AtomataTest, check_1) {
   Automata automata;
   automata.coin(60);
   automata.choice("Green tea");
@@ -57,7 +57,7 @@ TEST(AtomataTest, check_1){
   EXPECT_True(true, automata.check());
 }
 
-TEST(AtomataTest, check_2){
+TEST(AtomataTest, check_2) {
   Automata automata;
   automata.coin(20);
   automata.choice("Green tea");
@@ -65,7 +65,7 @@ TEST(AtomataTest, check_2){
   EXPECT_TRUE(false, automata.check());
 }
 
-TEST(AtomataTest, check_finish){
+TEST(AtomataTest, check_finish) {
   Automata automata;
   automata.coin(30);
   automata.choice("Green tea");
