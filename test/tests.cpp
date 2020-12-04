@@ -1,4 +1,4 @@
-/*#include "gtest/gtest.h"
+#include <gtest/gtest.h>
 #include "Automata.h"
 
 TEST(automata, on)
@@ -50,4 +50,4 @@ TEST(automata, coin3)
     automata1.coin(10);
     std::string expect = "ACCEPT";
     EXPECT_EQ(expect, automata1.getState());
-}*/
+}
