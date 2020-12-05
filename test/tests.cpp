@@ -26,10 +26,10 @@ TEST(automata, test3) {
 TEST(automata, test4) {
   Automata a;
   a.on();
-  std::string expected = "Americano\t40.000000\nBlack tea40.000000\n\
-                       Cacao\t50.000000\nCappuccino\t100.000000\n\
-                       Double espresso\t80.000000\nEspresso\t50.000000\n\
-                       Green tea\t40.000000\nHot chokolate\t90.000000\n\
+  std::string expected = "Americano\t40.000000\nBlack tea40.000000\
+                       Cacao\t50.000000\nCappuccino\t100.000000\
+                       Double espresso\t80.000000\nEspresso\t50.000000\
+                       Green tea\t40.000000\nHot chokolate\t90.000000\
                        Hot water\t200.000000\nLatte\t100.000000";
   EXPECT_EQ(expected, a.getMenu());
 }
@@ -56,7 +56,7 @@ TEST(automata, test7) {
   a.on();
   a.coin(200);
   a.select("Coffee");
-  STATES expected = CHECK;
+  STATES expected = ;
   EXPECT_EQ(expected, a.getState());
 }
 
@@ -65,7 +65,7 @@ TEST(automata, test8) {
   a.on();
   a.coin(50);
   a.select("Latte");
-  STATES expected = CHECK;
+  STATES expected = WAIT;
   EXPECT_EQ(expected, a.getState());
 }
 
