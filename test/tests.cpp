@@ -78,7 +78,7 @@ TEST(automata_test, test11) {
   a.finish();
   EXPECT_EQ(WAIT, a.getState());
 }
-TEST(automata_test, test11) {
+TEST(automata_test, test17) {
   Automata a;
   a.on();
   a.coin(50);
