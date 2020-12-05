@@ -18,7 +18,7 @@ TEST(task, test2){
 TEST(task, test3){
     Automata *a = new Automata();
     a->on();
-    a->coin(10.0)
+    a->coin(10.0);
     str s = a->coin(12.01);
     EXPECT_EQ(s, "Вы внесли 12.010000. Всего: 22.010000");
 }

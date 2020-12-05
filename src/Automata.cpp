@@ -1,4 +1,4 @@
-#include <automata.h>
+#include <Automata.h>
 
 void Automata::setMenuFromFile(string menu_file_name) {
     string tmp;
@@ -8,7 +8,7 @@ void Automata::setMenuFromFile(string menu_file_name) {
     if (file.is_open()){
         while (getline(file, tmp)){
             name = tmp.substr(0, tmp.find(' '));
-            price = tmp.substr(tmp.find(' ') + 1.0, tmp.size());
+            price = tmp.substr(tmp.find(' ') + 1, tmp.size());
             this->menu.insert(pair<string, double>(name, atof(price.c_str())));
 
         }
@@ -93,13 +93,13 @@ string Automata::cancel(){
     if (this->state == STATES::OFF){
         return "Автомат уже выключен";
     }
-    int tmp_cash = this->cash;
+    double tmp_cash = this->cash;
     this->cash = 0.0;
     this->state = STATES::WAIT;
     return "Вы вышли в главное меню\nВаша сдача: " + to_string(tmp_cash);
 }
 string Automata::cook(){
-    const int t = 1;
+    const int t = 100;
     cout << this->chosen_product << " готовится" << endl;
     cout << "1% ";
     _sleep(t);
