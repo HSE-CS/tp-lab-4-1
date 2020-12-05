@@ -1,22 +1,41 @@
 #include "Automata.h"
 #include <iostream>
 
-void on() {}
+Automata::Automata() {
+	state = States::OFF;
+	cash = 0;
+}
 
-void off() {}
+void Automata::on() {
+	if (state == OFF) {
+		state = WAIT;
+	}
+	else {
+		std::cout << "error" << std::endl;
+	}
+}
 
-void coin() {}
+void Automata::off() {
+	if (state == WAIT) {
+		state = OFF;
+	}
+	else {
+		std::cout << "error" << std::endl;
+	}
+}
 
-std::string getMenu() {}
+void Automata::coin() {}
 
-States getState() {}
+std::string Automata::getMenu() {}
 
-void choice() {}
+States Automata::getState() {}
 
-void check() {}
+void Automata::choice() {}
 
-void cancel() {}
+void Automata::check() {}
 
-void cook() {}
+void Automata::cancel() {}
 
-void finish() {}
+void Automata::cook() {}
+
+void Automata::finish() {}
