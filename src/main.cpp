@@ -3,10 +3,6 @@
 
 int main() {
     Automata a1;
-    auto drinks = a1.getMenu();
-    for (const auto &item: drinks) {
-        std::cout << item.first << " - " << item.second << '\n';
-    }
     std::cout << a1.getState() << '\n';
     a1.on();
     std::cout << a1.getState() << '\n';

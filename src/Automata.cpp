@@ -5,7 +5,7 @@
 Automata::Automata() {
     cash = 0;
     state = OFF;
-    input.open("../menu.txt");
+    input.open("/home/runner/work/tp-lab-4-1/tp-lab-4-1/menu.txt");
     std::string drink;
     ready_for_cooking = false;
     while (input >> drink) {
@@ -50,7 +50,18 @@ std::unordered_map<std::string, int> Automata::getMenu() const {
 }
 
 std::string Automata::getState() const {
-    return states[state];
+    switch(state) {
+        case OFF:
+            return "OFF";
+        case WAIT:
+            return "WAIT";
+        case ACCEPT:
+            return "ACCEPT";
+        case CHECK:
+            return "CHECK";
+        case COOK:
+            return "COOK";
+    }
 }
 
 void Automata::choice(const std::string & drink) {
