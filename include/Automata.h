@@ -35,4 +35,4 @@ public:
     STATES state;
 };
 
-#endif AUTOMATA_H_  //AUTOMATA_H_
+#endif  //AUTOMATA_H_
