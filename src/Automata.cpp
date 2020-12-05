@@ -109,8 +109,8 @@ void Automata::choice(unsigned choices) {
     }
     else {
         this->choices = choices;
-        this->state = CHECK;
-        this->check();
+        //this->state = CHECK;
+        //this->check();
         return;
     }
 }
