@@ -5,7 +5,7 @@
 TEST(Automata_test, test1) {
     Automata automata_1;
     automata_1.on();
-    EXPECT_EQ(test.getState(), WAIT);
+    EXPECT_EQ(automata_1.getState(), WAIT);
 }
 
 TEST(Automata_test, test2) {
