@@ -5,7 +5,7 @@
 Automata::Automata() {
     cash = 0;
     state = OFF;
-    input.open("menu.txt");
+    input.open("/home/runner/work/tp-lab-4-1/tp-lab-4-1/menu.txt");
     std::string drink;
     ready_for_cooking = false;
     while (input >> drink) {
