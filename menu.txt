@@ -1,0 +1,5 @@
+coffee 200
+tea 150
+milk 100
+water 50
+cola 175
