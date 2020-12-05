@@ -3,7 +3,7 @@
 
 TEST(task, test1){
     Automata *a = new Automata();
-    EXPECT_EQ(a->off(), "Чтобы выключить автомат нажмите cancel() и off()");
+    EXPECT_EQ(a->off(), "Автомат уже выключен");
 }
 
 TEST(task, test2){
@@ -21,7 +21,7 @@ TEST(task, test3){
 TEST(task, test4){
     Automata *a = new Automata();
     a->on();
-    EXPECT_EQ(a->choice("coffee"), "Вернитесь к прошлому шагу");
+    EXPECT_EQ(a->choice("coffee"), "Внесенной суммы не хватает");
 }
 
 TEST(task, test5){
