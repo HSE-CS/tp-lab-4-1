@@ -34,7 +34,7 @@ int Automata::getBalance() const {
     return cash;
 }
 
-std::unordered_map<std::string, int> Automata::getMenu() const {
+std::map<std::string, int> Automata::getMenu() const {
     return drink_price;
 }
 
