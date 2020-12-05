@@ -5,7 +5,6 @@
 Automata::Automata() {
     cash = 0;
     state = OFF;
-    std::string drink = "";
     ready_for_cooking = false;
 }
 
@@ -63,7 +62,6 @@ void Automata::check() {
 void Automata::cancel() {
     if (state == ACCEPT || state == CHECK) {
         cash = 0;
-        selected_drink = "";
         ready_for_cooking = false;
         state = WAIT;
     }
@@ -80,7 +78,6 @@ void Automata::finish() {
     if (state == COOK) {
         state = WAIT;
         std::cout << selected_drink << " is ready\n";
-        selected_drink = "";
         cash = 0;
         ready_for_cooking = false;
     }
