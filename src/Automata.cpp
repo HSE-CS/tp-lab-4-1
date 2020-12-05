@@ -34,7 +34,7 @@ bool Automata::coin(int c){
 string Automata::getMenu(){
   string s = "";
   for (int i = 0; i < 6; i++){
-    s += menu[i] + ": " + to_string(prices[i]) + " RUB\n";
+    s += to_string(i) + ". " + menu[i] + ": " + to_string(prices[i]) + " RUB\n";
   }
   return s;
 }

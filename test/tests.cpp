@@ -117,4 +117,10 @@ TEST(automata_test, test15) {
   a.coin(50);
   EXPECT_FALSE(a.off())
 }
+TEST(automata_test, test16) {
+  Automata a;
+  a.on();
+  a.coin(20);
+  EXPECT_FALSE(a.choice(10))
+}
 
