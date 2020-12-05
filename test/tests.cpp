@@ -91,7 +91,7 @@ TEST(automata, test11) {
     STATES expected = OFF;
     EXPECT_EQ(expected, a.getState());
 }
-TEST(automata, test11) {
+TEST(automata, test12) {
     Automata automat;
     automat.on();
     automat.coin(400);
