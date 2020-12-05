@@ -10,8 +10,8 @@ enum STATES { OFF, WAIT, ACCEPT, CHECK, COOK, };
 class Automata {
 private:
 	int cash;
-	vector<string> menu;
-	vector<int> prices;
+	vector<string> menu = {"colla"};
+	vector<int> prices = {10};
 	STATES state;
 
 public:
