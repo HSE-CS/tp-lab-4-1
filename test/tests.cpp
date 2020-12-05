@@ -26,7 +26,7 @@ TEST(Automata_test, test3)
 TEST(Automata_test, test4) {
 	Automata automata_4;
 	automata_4.coin(10);
-	STATES expect = ACCEPT;
+	STATES expect = OFF;
 	EXPECT_EQ(expect, automata_4.getState());
 }
 
@@ -34,7 +34,7 @@ TEST(Automata_test, test5) {
 	Automata automata_5;
 	automata_5.on();
 	automata_5.coin(50);
-	automata_5.choice(0);
+	automata_5.choice("tea");
 	STATES expect = WAIT;
 	EXPECT_EQ(expect, automata_5.getState());
 }
@@ -43,7 +43,7 @@ TEST(Automata_test, test6) {
 	Automata automata_6;
 	automata_6.on();
 	automata_6.coin(1);
-	automata_6.choice(0);
+	automata_6.choice("colla");
 	STATES expect = WAIT;
 	EXPECT_EQ(expect, automata_6.getState());
 }
@@ -52,7 +52,7 @@ TEST(Automata_test, test7) {
 	Automata automata_7;
 	automata_7.on();
 	automata_7.coin(20);
-	automata_7.choice(0);
+	automata_7.choice("tea");
 	STATES expect = WAIT;
 	EXPECT_EQ(expect, automata_7.getState());
 }
