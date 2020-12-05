@@ -5,7 +5,8 @@
 TEST(Automata_test, test1) {
     Automata automata_1;
     automata_1.on();
-    EXPECT_EQ(automata_1.getState(), WAIT);
+    STATES expect = WAIT;
+    EXPECT_EQ(expect, automata_1.getState());
 }
 
 TEST(Automata_test, test2) {
@@ -17,7 +18,8 @@ TEST(Automata_test, test2) {
 TEST(Automata_test, test3) {
     Automata automata_3;
     automata_3.cook();
-    EXPECT_EQ(automata_3.getState(), COOK);
+    STATES expect = COOK;
+    EXPECT_EQ(expect, automata_3.getState());
 }
 
 TEST(Automata_test, test4)
@@ -33,7 +35,8 @@ TEST(Automata_test, test5) {
     automata_5.on();
     automata_5.coin(60);
     automata_5.choice(0);
-    EXPECT_EQ(automata_5.getState(), ACCEPT);
+    STATES expect = ACCEPT;
+    EXPECT_EQ(expect, automata_5.getState());
 }
 
 TEST(Automata_test, test6) {
@@ -42,8 +45,8 @@ TEST(Automata_test, test6) {
     automata_6.coin(1);
     automata_6.choice(6);
     automata_6.check(6);
-    STATES expected = CHECK;
-    EXPECT_EQ(expected, automata_6.getState());
+    STATES expect = CHECK;
+    EXPECT_EQ(expect, automata_6.getState());
 }
 
 TEST(Automata_test, test7) {
@@ -53,22 +56,23 @@ TEST(Automata_test, test7) {
     automata_7.coin(15);
     automata_7.choice(10);
     automata_7.check(10);
-    EXPECT_EQ(automata_7.getState(), WAIT);
+    STATES expect = WAIT;
+    EXPECT_EQ(expect, automata_7.getState());
 }
 
 TEST(Automata_test, test8) {
     Automata automata_8;
     automata_8.on();
     automata_8.coin(8);
-    STATES expected = ACCEPT;
-    EXPECT_EQ(expected, automata_8.getState());
+    STATES expect= ACCEPT;
+    EXPECT_EQ(expect, automata_8.getState());
 }
 
 TEST(Automata_test, test9) {
     Automata automata_9;
     automata_9.coin(70);
-    STATES expected = OFF;
-    EXPECT_EQ(expected, automata_9.getState());
+    STATES expect = OFF;
+    EXPECT_EQ(expect, automata_9.getState());
 }
 
 TEST(Automata_test, test10)
@@ -77,5 +81,6 @@ TEST(Automata_test, test10)
     automata_10.on();
     automata_10.coin(30);
     automata_10.coin(10);
-    EXPECT_EQ(20, automata_10.choice(9));
+    STATES expect = ACCEPT;
+    EXPECT_EQ(expect, automata_10.getState());
 }
