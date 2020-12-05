@@ -56,7 +56,7 @@ TEST(automata, test7) {
   a.on();
   a.coin(200);
   a.select("Coffee");
-  STATES expected = ;
+  STATES expected = WAIT;
   EXPECT_EQ(expected, a.getState());
 }
 
