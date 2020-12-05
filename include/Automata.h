@@ -9,9 +9,6 @@ enum STATES {
     OFF, WAIT, ACCEPT, CHECK, COOK
 };
 
-
-std::vector<std::string> states = {"OFF", "WAIT", "ACCEPT", "CHECK", "COOK"};
-
 class Automata {
 private:
     int cash;
