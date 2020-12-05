@@ -82,7 +82,7 @@ TEST(automata, test10) {
   Automata a;
   a.on();
   a.coin(200);
-  a.choice("Cappuccino");
+  a.select("Cappuccino");
   a.cancel();
   STATES expected = WAIT;
   EXPECT_EQ(expected, a.getState());
