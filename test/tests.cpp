@@ -17,7 +17,7 @@ TEST(Automata_test, test2) {
 TEST(Automata_test, test3) {
     Automata automata_3;
     automata_3.cook();
-    EXPECT_EQ(Automata.getState(), COOK);
+    EXPECT_EQ(automata_3.getState(), COOK);
 }
 
 TEST(Automata_test, test4)
