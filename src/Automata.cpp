@@ -7,9 +7,9 @@ void off() {}
 
 void coin() {}
 
-void getMenu() {}
+std::string getMenu() {}
 
-void getState() {}
+States getState() {}
 
 void choice() {}
 

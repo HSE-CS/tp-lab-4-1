@@ -2,6 +2,7 @@
 #ifndef	AUTOMATA_H
 #define	AUTOMATA_H
 
+#define SIZE 10
 
 enum States {
 	OFF,
@@ -13,22 +14,22 @@ enum States {
 
 class Automata {
 private:
-	int cash;	// для хранения текущей суммы
-	char menu[10][10];	// массив строк названий напитков(может подгружаться из файла)
-	char prices[10];	// массив цен напитков(соответствует массиву menu)
-	States state;	// текущее состояние автомата
+	int cash;
+	std::string menu[SIZE];
+	char prices[SIZE];
+	States state;
 public:
-	// конструктор
-	void on();	// включение автомата
-	void off();	// выключение автомата
-	void coin();	//занесение денег на счёт пользователем
-	void getMenu();	// считывание меню с напитками и ценами для пользователя
-	void getState();	// считывание текущего состояния для пользователя
-	void choice();	// выбор напитка пользователем
-	void check();	// проверка наличия необходимой суммы
-	void cancel();	// отмена сеанса обслуживания пользователем
-	void cook();	// имитация процесса приготовления напитка
-	void finish();	// завершение обслуживания пользователя
+	Automata();
+	void on();
+	void off();
+	void coin();
+	std::string getMenu();
+	States getState();
+	void choice();
+	void check();
+	void cancel();
+	void cook();
+	void finish();
 };
 
 #endif
