@@ -1,0 +1,4 @@
+tea 10
+water 500
+nottea 20
+coffee 5 
