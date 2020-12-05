@@ -44,7 +44,7 @@ TEST (Automata, testCoin2) {
     Automata c;
     c.on();
     c.coin(50.0);
-    c.coin(45.0)
+    c.coin(45.0);
     EXPECT_EQ(95.0, c.getReminder());
 }
 
