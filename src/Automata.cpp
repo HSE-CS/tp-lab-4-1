@@ -94,12 +94,12 @@ std::string Automata::retChoice() {
     }
 }
 
-void Automata::choice(unsigned choice) {
+void Automata::choice(unsigned choices) {
     if (this->state == OFF) {
         std::string error = this->error_automata(0);
         return;
     }
-    else if (choice < -1 && choice > this->m_size) {
+    else if (choices < -1 && choices > this->m_size) {
         std::string error = this->error_automata(2);
         return;
     }
@@ -108,7 +108,7 @@ void Automata::choice(unsigned choice) {
         return;
     }
     else {
-        this->choice = choice;
+        this->choices = choices;
         this->state = CHECK;
         this->check();
         return;
