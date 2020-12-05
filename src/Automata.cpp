@@ -78,13 +78,16 @@ STATES Automata::getState() {
 }
 
 void Automata::select(std::string drink) {
- 
-  if (this->state == ACCEPT)
+  if (this->state == ACCEPT) 
     if (this->menu.find(drink) != this->menu.end()) {
       this->state = CHECK;
       this->choice = drink;
       check();
     }
+    else {
+      cancel();
+    }
+
 }
 
 void Automata::cancel() {
