@@ -1,9 +1,8 @@
 #ifndef AUTOMATA_AUTOMATA_H
 #define AUTOMATA_AUTOMATA_H
 
-#include <unordered_map>
+#include <map>
 #include <string>
-#include <fstream>
 #include <vector>
 
 enum STATES {
@@ -13,15 +12,15 @@ enum STATES {
 class Automata {
 private:
     int cash;
-    std::unordered_map<std::string, int> drink_price;
-    std::ifstream input;
     bool ready_for_cooking;
     STATES state;
+    std::map<std::string, int> drink_price = {
+            {"coffee", 200}, {"tea", 150},
+            {"milk", 100},{"water", 50},
+            {"cola", 175}};
     std::string selected_drink;
 public:
     Automata();
-
-    ~Automata();
 
     void on();
 
@@ -29,7 +28,7 @@ public:
 
     void coin(int);
 
-    std::unordered_map<std::string, int> getMenu() const;
+    std::map<std::string, int> getMenu() const;
 
     std::string getState() const;
 
