@@ -10,6 +10,7 @@ enum STATES {
     OFF, WAIT, ACCEPT, CHECK, COOK
 };
 
+
 std::vector<std::string> states = {"OFF", "WAIT", "ACCEPT", "CHECK", "COOK"};
 
 
@@ -17,14 +18,11 @@ class Automata {
 private:
     int cash;
     std::unordered_map<std::string, int> drink_price;
-    std::ifstream input;
     bool ready_for_cooking;
     STATES state;
     std::string selected_drink;
 public:
     Automata();
-
-    ~Automata();
 
     void on();
 
