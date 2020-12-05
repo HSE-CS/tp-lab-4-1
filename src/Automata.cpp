@@ -116,34 +116,37 @@ void Automata::choice(unsigned choices) {
 }
 
 void Automata::check() {
+    if (this->state == OFF) {
+        std::string error = this->error_automata(0);
+        return;
+    }
+    else if (this->choices == 8) {
+        std::string error = this->error_automata(2);
+        return;
+    }
+
+    else if (this->state == COOK) {
+        std::string error = this->error_automata(1);
+        return;
+    }
+
+    this->state = CHECK;
     if (this->state == CHECK && this->cash >= this->prices[this->choices]) {
         this->cash -= this->prices[this->choices];
         this->state = COOK;
         this->cook();
         return;
     }
-    else if (this->state == CHECK && CHECK && this->cash < this->prices[this->choices]) {
+    else if (this->state == CHECK && this->cash < this->prices[this->choices]) {
         std::string error = this->error_automata(3);
         this->state = ACCEPT;
         this->choices = 8;
         return;
     }
-    else if (this->state == OFF) {
-        std::string error = this->error_automata(0);
-        return;
-    }
-    else if (this->state == ACCEPT || this->state == WAIT) {
-        std::string error = this->error_automata(2);
-        return;
-    }
-    else if (this->state == COOK) {
-        std::string error = this->error_automata(1);
-        return;
-    }
 }
 
 void Automata::cancel() {
-    if (this->state == ACCEPT || this->state == CHECK) {
+    if (this->state == ACCEPT || this->state == WAIT) {
         this->state = WAIT;
         this->choices = 8;
         this->cash = 0;
