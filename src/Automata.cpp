@@ -5,17 +5,14 @@
 Automata::Automata() {
     cash = 0;
     state = OFF;
-    input.open("/home/runner/work/tp-lab-4-1/tp-lab-4-1/menu.txt");
-    std::string drink;
+    std::ifstream input("/home/runner/work/tp-lab-4-1/tp-lab-4-1/menu.txt");
+    std::string drink = "";
     ready_for_cooking = false;
     while (input >> drink) {
         int price = 0;
         input >> price;
         drink_price[drink] = price;
     }
-}
-
-Automata::~Automata() {
     input.close();
 }
 
