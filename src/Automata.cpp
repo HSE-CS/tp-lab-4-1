@@ -1,12 +1,14 @@
 
 // Copyright 2020 ArtyomLavrov
 
+
 #include <iostream>
 #include <cmath>
 #include <iomanip>
-#include <unistd.h>
 #include <cstring>
+#include <unistd.h>
 #include "Automata.h"
+
 
 void Automata::on() {
     if (state == OFF) {
@@ -18,8 +20,9 @@ void Automata::off() {
     state = OFF;
 }
 
-void Automata::cash(int money) {
+void Automata::coin(int money) {
     if (state == WAIT) {
+
         lastactivity += money;
         state = ACCEPT;
     }
@@ -27,7 +30,7 @@ void Automata::cash(int money) {
 
 void Automata::cancel() {
     if (state == ACCEPT || state == CHECK) {
-        lastactivity = 0;
+        lastactivity = 0; //возврат
         state = WAIT;
     }
 }
@@ -58,9 +61,10 @@ void Automata::check(int number) {
         this->cook();
         cash += prices[number];
         lastactivity = 0; //сдача
-    }  else {
+    }
+    else {
         cancel();
-            }
+    }
 }
 
 void Automata::cook() {

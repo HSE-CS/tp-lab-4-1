@@ -10,8 +10,8 @@
 #include <cstring>
 
 
-using namespace std;
 
+using namespace std;
 
 enum STATES {
     OFF,
@@ -23,14 +23,14 @@ enum STATES {
 
 class Automata {
 
-  private:
+private:
     long cash;
     int lastactivity;
-    string menu[5] = { "Apple juice", "Cocoa", "Soda", "Coca-cola", "Coffee" };
-    int prices[5] = { 40, 45, 50, 55, 60 };
+    string menu[5] = { "Soda", "Apple juice", "Cocao", "Coffee", "Coca-cola" };
+    int prices[5] = { 35, 41, 47, 53, 59 };
     STATES state;
 
-  public:
+public:
     Automata() {
         state = OFF;
         cash = 0;
@@ -39,7 +39,7 @@ class Automata {
 
     void on();
     void off();
-    void cash(int money);
+    void coin(int money);
     string* getMenu();
     STATES getState();
     void choice(int number);
