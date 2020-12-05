@@ -43,8 +43,7 @@ TEST(Automata_test, test6) {
 	Automata automata_6;
 	automata_6.on();
 	automata_6.coin(1);
-	automata_6.choice(5);
-	automata_6.check(5);
+	automata_6.choice(0);
 	STATES expect = WAIT;
 	EXPECT_EQ(expect, automata_6.getState());
 }
