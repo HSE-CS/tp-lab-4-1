@@ -67,12 +67,8 @@ TEST (Automata, testMenu2) {
     EXPECT_EQ(menu, c.getMenu());
 }
 
-TEST (Automata, testPrices1) {
-    Automata c;
-    EXPECT_EQ(std::map<std::string, double>(), c.getPriece());
-}
 
-TEST (Automata, testPrices2) {
+TEST (Automata, testPrices1) {
     Automata c;
     std::map<std::string, double> prices{
         std::make_pair("Tea", 10.0),
