@@ -26,7 +26,7 @@ TEST(automata, test4) {
 	Automata aut4;
 	aut4.on();
 	aut4.coin(100);
-	STATES expect = WAIT;
+	STATES expect = ACCEPT;
 	EXPECT_EQ(expect, aut4.getState());
 }
 
