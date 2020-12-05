@@ -33,15 +33,6 @@ TEST(automata, test4) {
 
 TEST(automata, test5) {
     Automata a;
-    std::unordered_map<std::string, int> menu = {
-            {"coffee", 200}, {"tea", 150},
-            {"milk", 100},{"water", 50},
-            {"cola", 175}};
-    EXPECT_EQ(menu, a.getMenu());
-}
-
-TEST(automata, test6) {
-    Automata a;
     a.on();
     a.coin(50);
     a.cancel();
@@ -49,7 +40,7 @@ TEST(automata, test6) {
     EXPECT_EQ(expected, a.getState());
 }
 
-TEST(automata, test7) {
+TEST(automata, test6) {
     Automata a;
     a.on();
     a.coin(200);
@@ -58,7 +49,7 @@ TEST(automata, test7) {
     EXPECT_EQ(expected, a.getState());
 }
 
-TEST(automata, test8) {
+TEST(automata, test7) {
     Automata a;
     a.on();
     a.coin(200);
@@ -68,7 +59,7 @@ TEST(automata, test8) {
     EXPECT_EQ(expected, a.getState());
 }
 
-TEST(automata, test9) {
+TEST(automata, test8) {
     Automata a;
     a.on();
     a.coin(100);
@@ -78,7 +69,7 @@ TEST(automata, test9) {
     EXPECT_EQ(expected, a.getState());
 }
 
-TEST(automata, test10) {
+TEST(automata, test9) {
     Automata a;
     a.on();
     a.coin(200);
@@ -88,7 +79,7 @@ TEST(automata, test10) {
     EXPECT_EQ(expected, a.getState());
 }
 
-TEST(automata, test11) {
+TEST(automata, test10) {
     Automata a;
     a.on();
     a.coin(200);
@@ -99,7 +90,7 @@ TEST(automata, test11) {
     EXPECT_EQ(expected, a.getState());
 }
 
-TEST(automata, test12) {
+TEST(automata, test11) {
     Automata a;
     a.on();
     a.coin(200);
@@ -111,7 +102,7 @@ TEST(automata, test12) {
 EXPECT_EQ(expected, a.getState());
 }
 
-TEST(automata, test13) {
+TEST(automata, test12) {
     Automata a;
     a.on();
     a.coin(200);

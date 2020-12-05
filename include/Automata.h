@@ -3,7 +3,6 @@
 
 #include <unordered_map>
 #include <string>
-#include <fstream>
 #include <vector>
 
 enum STATES {
@@ -13,11 +12,14 @@ enum STATES {
 
 std::vector<std::string> states = {"OFF", "WAIT", "ACCEPT", "CHECK", "COOK"};
 
+std::unordered_map<std::string, int> drink_price = {
+                {"coffee", 200}, {"tea", 150},
+                {"milk", 100},{"water", 50},
+                {"cola", 175}};
 
 class Automata {
 private:
     int cash;
-    std::unordered_map<std::string, int> drink_price;
     bool ready_for_cooking;
     STATES state;
     std::string selected_drink;
