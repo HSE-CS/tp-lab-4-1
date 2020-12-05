@@ -18,24 +18,24 @@ class Automata {
  private:
      int cash; 
      std::string menu[8] = { 
-         "...",
-         "...",
-         "...",
-         "...",
-         "...", 
-         "...",
-         "...",
-         "..."
+         "Tea",
+         "Coffee",
+         "Juice",
+         "Water",
+         "Ñookies", 
+         "Chocolate bar",
+         "Crispbreads",
+         "Ñandy"
      };
      int prices[8] = { 
-         0, 
-         0,
-         0,
-         0,
-         0,
-         0,
-         0,
-         0
+         90, 
+         190,
+         80,
+         40,
+         80,
+         120,
+         40,
+         75
      };
      unsigned m_size = 7;
      unsigned choices;
