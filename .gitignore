@@ -1,0 +1,8 @@
+.idea
+.github
+cmake-build-debug
+.travis
+ext
+img
+
+.travis.yml
