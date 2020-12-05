@@ -1,5 +1,15 @@
 #include <Automata.h>
 
+int menu_len = 4;
+string drinks[4] = {"coffee", "black_tea", "green_tea", "white_tea"};
+double prices[4] = {20.9,    15.5,           25.3,        30.6};
+
+Automata::Automata() {
+    for (int i = 0; i < menu_len; ++i) {
+        this->menu.insert(pair<string, double>(drinks[i], prices[i]));
+    }
+}
+
 void Automata::setMenuFromFile(string menu_file_name) {
     string tmp;
     string name;
@@ -21,10 +31,6 @@ void Automata::setMenuFromFile(string menu_file_name) {
 
 Automata::Automata(string menu_file_name) {
     setMenuFromFile(menu_file_name);
-}
-
-Automata::Automata() {
-    setMenuFromFile("..\\menu.txt");
 }
 
 void Automata::printMenuToConsole(){
