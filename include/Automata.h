@@ -22,10 +22,10 @@ class Automata {
          "Coffee",
          "Juice",
          "Water",
-         "Ñookies", 
+         "Cookies", 
          "Chocolate bar",
          "Crispbreads",
-         "Ñandy"
+         "Candy"
      };
      int prices[8] = { 
          90, 
