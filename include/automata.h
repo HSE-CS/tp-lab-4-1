@@ -1,9 +1,9 @@
 //Copyright 2020 FOM
 #ifndef INCLUDE_AUTOMATA_H_
 #define INCLUDE_AUTOMATA_H_
-#include<vector>
 #include <string>
 #define SIZE 10
+
 enum STATES {
 	OFF,
 	WAIT,
@@ -13,22 +13,22 @@ enum STATES {
 };
 
 class Automata {
- public:
-	 Automata();
-	 void on();
-	 void off();
-	 bool coin(int chash);
-	 std::string getMenu();
-	 STATES getState();
-	 void choice(int num);
-	 void check(int num);
-	 void cancel();
-	 void cook();
-	 void finish();
+public:
+	Automata();
+	void on();
+	void off();
+	bool coin(int chash);
+	std::string getMenu();
+	STATES getState();
+	void choice(int num);
+	void check(int num);
+	void cancel();
+	void cook();
+	void finish();
 
- private:
+private:
 	int cash;
-	std::string arr_menu[SIZE] = {"Espresso","Cappuccino",
+	std::string arr_menu[SIZE] = { "Espresso","Cappuccino",
 		"Ristretto","Lungo",
 		"Latte","Latte macchiato",
 		"Tea","Green tea",
@@ -38,3 +38,4 @@ class Automata {
 	STATES state;
 };
 #endif // INCLUDE_AUTOMATA_H_
+

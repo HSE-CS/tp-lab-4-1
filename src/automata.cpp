@@ -1,6 +1,6 @@
 //Copyright 2020 FOM
 #include <iostream>
-#include "automata.h"
+#include "Automata.h"
 
 Automata::Automata() {
     state = STATES::OFF;
