@@ -11,7 +11,7 @@ std::ifstream fin_menu("menu.txt");
 std::ifstream fin_prices("prices.txt");
 std::ifstream fin_kod("kod.txt");
 
-Automata::automat() {
+Automata::Automata() {
     getMenu();
     getState(1);
     this->cash = 0;

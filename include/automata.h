@@ -1,6 +1,6 @@
 // Copyright 2020 Elizaveta Drobot
-#ifndef INCLUDE_Automata_H_
-#define INCLUDE_Automata_H_
+#ifndef INCLUDE_AUTOMATA_H_
+#define INCLUDE_AUTOMATA_H_
 
 #define _CRT_SECURE_NO_WARNINGS
 
@@ -25,7 +25,7 @@ enum STATES {
 class Automata
 {
 public:
-    automat();//конструктор
+    Automata();//конструктор
     void on();// -включение автомата;
     void off();// -выключение автомата;
     void coin(int);// -занесение денег на счёт пользователем;
@@ -48,4 +48,4 @@ private:
     std::vector <int> array_kod {10, 11, 12, 13, 14};
     int state;
 };
-#endif  // INCLUDE_Automata_H_
+#endif  // INCLUDE_AUTOMATA_H_
