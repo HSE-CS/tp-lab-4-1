@@ -34,7 +34,10 @@ States Automata::getState() {
 	return state;
 }
 void Automata::choise(std::string choise) {
-	auto index = find(menu.begin(), menu.end(), choise) - menu.begin();
+	size_t index = 0;
+	for (; index < menu.size(); index++) {
+		if (menu[index] == choise) break;
+	}
 	if (check(prices[index])) {
 		cash -= prices[index];
 		state = CHECK;
