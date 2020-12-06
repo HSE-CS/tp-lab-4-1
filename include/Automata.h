@@ -4,7 +4,7 @@
 #ifndef	AUTOMATA_H
 #define	AUTOMATA_H
 
-#define SIZE 10
+#define SIZE 5
 
 enum States {
 	OFF,

@@ -65,6 +65,8 @@ void Automata::check(int pos) {
 	state = CHECK;
 	if (cash >= Automata::prices[pos]) {
 		cash -= Automata::prices[pos];
+		std::string msg = "Cooking " + Automata::menu[pos] + " for you";
+		std::cout << msg << std::endl;
 		std::cout << "Deposited cash:  " << cash << std::endl;
 		cook();
 	} else {
@@ -74,18 +76,20 @@ void Automata::check(int pos) {
 
 void Automata::cancel() {
 	if (state != OFF) {
+		state = WAIT;
+		cash = 0;
 		std::cout << "Operation is canceled" << std::endl;
-		finish();
 	}
 }
 
 void Automata::cook() {
 	state = COOK;
 	std::cout << "Please wait..." << std::endl;
-	std::cout << "brrrrrrrrrrrrrrr pff" << std::endl;
+	std::cout << "*brrrrrrrrrrrrrrr pff*" << std::endl;
 }
 
 void Automata::finish() {
+	std::cout << "Thank you!" << std::endl;
 	state = WAIT;
 	cash = 0;
 }
