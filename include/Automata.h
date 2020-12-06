@@ -19,11 +19,11 @@ class Automata {
 
 private:
 	unsigned int cash;
-	/*static*/ std::vector<std::string> menu; // { "black tea", "green tea", "cappuccino", "latte", "espresso", "americano", "hot chocolate"}
-	/*static*/ std::vector<unsigned int> prices;
+	/*static*/ std::vector<std::string> menu{ "black tea", "green tea", "cappuccino", "latte", "espresso", "americano", "hot chocolate" };
+	/*static*/ std::vector<unsigned int> prices{ 10, 15, 40, 40, 40, 45, 35 };
 	STATES state;
 public:
-	Automata(std::vector<std::string> menu, std::vector<unsigned int> prices);
+	Automata();
 	void on();
 	void off();
 	void coin(unsigned int money);

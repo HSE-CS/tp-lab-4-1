@@ -5,7 +5,7 @@
 #include <utility>
 #include <vector>
 
-Automata::Automata(std::vector<std::string> menu, std::vector<unsigned int> prices) {
+Automata::Automata() {
 	cash = 0;
 	this->menu = menu;
 	this->prices = prices;
@@ -65,7 +65,7 @@ void Automata::cancel() {
 
 void Automata::cook() {
 	if (state == CHECK) {
-		state == COOK;
+		state = COOK;
 		finish();
 	}
 }
