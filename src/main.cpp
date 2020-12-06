@@ -16,3 +16,4 @@ int main() {
 	cout << a1.getState() << endl;
 
 	return 0;
+}
