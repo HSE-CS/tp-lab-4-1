@@ -26,7 +26,7 @@ TEST(AutomataTest, test7) {
     test.on();
     test.coin(12);
     test.choice(1);
-    EXPECT_EQ(test.getState(), ACCEPT);
+    EXPECT_EQ(test.getState(), CHECK);
 }
 
 
@@ -35,8 +35,7 @@ TEST(AutomataTest, test8) {
     test.on();
     test.coin(12);
     test.choice(1);
-    test.check();
-    EXPECT_EQ(test.getState(), ACCEPT);
+    EXPECT_EQ(test.check(), true);
 }
 
 TEST(AutomataTest, test10) {
