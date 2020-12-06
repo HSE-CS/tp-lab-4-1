@@ -55,7 +55,7 @@ void Automata::coin(int a) {  // -занесение денег на счёт пользователем;
 void Automata::printMenu() {
     for (int i = 0; i < this->array_menu.size(); i++) {
         std::cout << "\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~";
-        std::cout << "\n " << array_menu[i] << "= " << array_prices[i] << "          kod = " << array_kod[i] <<"  ";
+        std::cout << "\n " << array_menu[i] << "= " << array_prices[i] << "          kod = " << array_kod[i] << "  ";
         std::cout << "\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
     }
 }
@@ -85,10 +85,9 @@ int Automata::printState() {  // -считывание текущего состояния для пользователя
         return cooking;
         break;
     }
-    return off_automat;
 }
 bool Automata::choice(int kod) {  // -выбор напитка пользователем;
-    if (kod > array_kod[array_kod.size()-1]) {
+    if (kod > array_kod[array_kod.size() - 1]) {
         std::cout << "\nНеправильный код напитка. Попробуйте еще раз.";
         return 0;
     }
@@ -99,19 +98,19 @@ bool Automata::choice(int kod) {  // -выбор напитка пользователем;
                 if (check(array_prices[i]) == 0) {
                     return 0;
                 }
+                cash = cash - array_prices[i];
+                cook();
                 return 1;
-                break;
+
             }
         }
     }
 }
 bool Automata::check(int number) {  // -проверка наличия необходимой суммы;
     if (cash >= number) {
-        cash = cash - number;
         total_cash += number;
-        cook();
         return 1;
-        
+
     }
     else
     {
@@ -122,7 +121,7 @@ bool Automata::check(int number) {  // -проверка наличия необходимой суммы;
 }
 void Automata::cancel() {  // -отмена сеанса обслуживания пользователем;
     this->cash = 0;
-    this->state = off_automat;
+    off();
 }
 void Automata::cook() {  // -имитация процесса приготовления напитка;
     getState(4);
@@ -133,5 +132,5 @@ void Automata::cook() {  // -имитация процесса приготовления напитка;
 void Automata::finish() {  // -завершение обслуживания пользователя.
     std::cout << "\nСпасибо за заказ, приходите еще.\n";
     this->cash = 0;
-    this->state = off_automat;
+    off();
 }
