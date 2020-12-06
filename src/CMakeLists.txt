@@ -26,7 +26,8 @@ target_link_libraries(Automata
 target_link_libraries(Menu
   pthread)
   
-add_executable(${PROJECT_NAME}.info main.cpp)
+add_executable(Automata.info main.cpp)
+add_executable(Menu.info main.cpp)
 target_include_directories(Automata.info
   PUBLIC ${CMAKE_CURRENT_BINARY_DIR}
          ${${PROJECT_NAME}_SOURCE_DIR}/include)
