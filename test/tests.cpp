@@ -47,7 +47,6 @@ TEST(automata_t, test6) {
 
   Automata avt;
   avt.on();
-  avt.coin(330);
   avt.choice(3);
   EXPECT_EQ(3, avt.get_ch());
 
