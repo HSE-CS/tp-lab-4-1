@@ -71,5 +71,6 @@ TEST(cancel, test3) {
 Automata test;
 test.on();
 test.coin(30);
+test.cancel();
 EXPECT_EQ(test.getState(), "WAIT");
 }
