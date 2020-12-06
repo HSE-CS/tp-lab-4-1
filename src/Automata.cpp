@@ -1,6 +1,5 @@
 #include"Automata.h"
 #include<iostream>
-#include<windows.h>
 
 std::string states[5] = {
   "OFF",
