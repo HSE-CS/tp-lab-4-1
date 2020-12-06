@@ -1,6 +1,5 @@
 #include <gtest/gtest.h>
 #include "Automata.h"
-#include "Menu.h"
 
 #include <iostream>
 #include <vector>
