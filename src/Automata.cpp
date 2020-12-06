@@ -2,6 +2,7 @@
 #include "Automata.h"
 
 Automata::Automata() {
+	cash = 0;
 	state = OFF;
 }
 
@@ -24,6 +25,10 @@ void Automata::coin(double cash) {
 	}
 }
 
+double Automata::getCash() {
+	return cash;
+}
+
 STATES Automata::getState() {
 	return this->state;
 }
@@ -31,7 +36,7 @@ STATES Automata::getState() {
 std::string Automata::getMenu() {
 	std::string menu;
 	for (int i = 0; i < sizeof(prices)/sizeof(double); i++) {
-		menu += i + ". " + this->menu[i] + " - " + std::to_string(prices[i]) + "\n";
+		menu += std::to_string(i) + ". " + this->menu[i] + " - " + std::to_string(prices[i]) + "\n";
 	}
 	return menu;
 }
@@ -62,7 +67,7 @@ void Automata::finish(int index) {
 }
 
 void Automata::check(int index) {
-	if (state == ACCEPT && cash >= prices[index]) {
+	if (cash >= prices[index]) {
 		cook(index);
 		return;
 	}

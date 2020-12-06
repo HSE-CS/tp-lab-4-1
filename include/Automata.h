@@ -8,7 +8,7 @@ enum STATES {OFF, WAIT, ACCEPT, CHECK, COOK};
 
 class Automata {
  private:
-	double cash = 0.0;
+	double cash;
 	std::string menu[8] = {"water", "tea", "latte", "cappuccino",
                             "americano", "espresso", "hot chocolate",
                             "cocoa"};
@@ -23,6 +23,7 @@ class Automata {
 	void off();
 	void coin(double cash);
 	std::string getMenu();
+	double getCash();
 	STATES getState();
 	void choice(int num);
 	void cancel();
