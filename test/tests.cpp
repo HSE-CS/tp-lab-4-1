@@ -25,11 +25,10 @@ TEST(Automata, test_coin) {
 
 TEST(Automata, test_choice) {
 	Automata automata;
-	automata.on();
-	automata.coin(50);
+    	automata.on();
+	automata.coin(40);
 	automata.choice(1);
-	automata.cook();
-	EXPECT_EQ(5, automata.getState());
+	EXPECT_EQ(WAIT, automata.getState());
 }
 
 TEST(Automata, test_finish) {
@@ -39,4 +38,10 @@ TEST(Automata, test_finish) {
 	automata.choice(1);
 	automata.finish();
 	EXPECT_EQ(WAIT, automata.getState());
+}
+
+TEST(Automata, test_cancel) {
+    	Automata automata;
+    	automata.cancel();
+    	EXPECT_EQ(0, automata.getState());
 }
