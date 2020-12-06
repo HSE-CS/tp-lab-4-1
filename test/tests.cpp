@@ -1,6 +1,5 @@
-#include"Automata.h"
 #include<gtest/gtest.h>
-
+#include"Automata.h"
 
 TEST(automata_t, test1) {
 
@@ -47,7 +46,9 @@ TEST(automata_t, test5) {
 TEST(automata_t, test6) {
 
   Automata avt;
-  avt.choice(3)
+  avt.on();
+  avt.coin(330);
+  avt.choice(3);
   EXPECT_EQ(3, avt.get_ch());
 
 }
@@ -57,7 +58,7 @@ TEST(automata_t, test7) {
   Automata avt;
   avt.on();
   avt.coin(30);
-  avt.choice(1)
+  avt.choice(1);
   EXPECT_FALSE(avt.check());
 
 }
@@ -96,6 +97,9 @@ TEST(automata_t, test10) {
 TEST(automata_t, test11) {
 
   Automata avt;
+  avt.on();
+  avt.coin(130);
+  avt.choice(3);
   avt.cook();
   EXPECT_EQ(COOK, avt.getState());
 
