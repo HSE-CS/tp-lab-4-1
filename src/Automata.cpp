@@ -174,8 +174,10 @@ void Automata::printBeautifulMenu()
 			Menu.insert(make_pair(menu[i], prices[i]));
 		}
 		map <string, int>::iterator i;
+		int number = 1;
 		for (i = Menu.begin(); i != Menu.end(); i++) {
-			(*aout) << i << ' ' << i->first << ' ' << i->second << endl;
+			(*aout) << number << ' ' << i->first << ' ' << i->second << endl;
+			number++;
 		}
 	}
 }
