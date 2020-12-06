@@ -46,10 +46,10 @@ void Automata::getMenu(int num)
 	}
 }
 
-STATE Automata::getState()
+string Automata::getState()
 {
-	cout << " Cash= " << this->cash << " Donation= " << this->donation << "\t";
-	return this->state;
+	string st = " Cash= " + to_string(this->cash) + " Donation= " + to_string(this->donation) + " State= " + to_string(this->state);
+	return st;
 }
 
 void Automata::choice(int num) 

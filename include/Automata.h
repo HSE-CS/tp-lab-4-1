@@ -6,14 +6,13 @@
 #include <cmath>
 using namespace std;
 
-enum STATE { OFF = 1, WAIT, ACCEPT, CHECK, COOK };
-
 class Automata 
 {
 private:
 	int cash, donation;
 	int prices[8] = { 7, 10, 13, 19, 20, 25, 999, 1};
 	string menu[8] = { "Tea", "Milk", "Espresso", "Americano", "Iced coffee", "Cappucino", "Red eye", "Yuan Yang" };
+	enum STATE { OFF = 1, WAIT, ACCEPT, CHECK, COOK };
 	STATE state;
 public:
 	Automata() 
@@ -26,7 +25,7 @@ public:
 	void off();
 	void coin(int, bool next=false);
 	void getMenu(int num=8);
-	STATE getState();
+	string getState();
 	void choice(int);
 	void check(int);
 	void cancel();
