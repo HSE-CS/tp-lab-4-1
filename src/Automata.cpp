@@ -2,6 +2,7 @@
 #include <map>
 #include <fstream>
 #include <iostream>
+#include <cstdlib>
 #include "Automata.h"
 
 using namespace std;
@@ -14,7 +15,7 @@ vector<int> Automata::prices = {
 	40, 45, 30, 35, 50
 };
 
-Automata::Automata() //конструктор
+Automata::Automata() //ГЄГ®Г­Г±ГІГ°ГіГЄГІГ®Г°
 {
 	keptSum = 0;
 	state = OFF;
@@ -23,7 +24,7 @@ Automata::Automata() //конструктор
 	*(aout) << "AUTO SET" << endl;
 }
 
-Automata::Automata(ostream* definedStream) //конструктор
+Automata::Automata(ostream* definedStream) //ГЄГ®Г­Г±ГІГ°ГіГЄГІГ®Г°
 {
 	keptSum = 0;
 	state = OFF;
@@ -32,7 +33,7 @@ Automata::Automata(ostream* definedStream) //конструктор
 	*(aout) << "AUTO SET" << endl;
 }
 
-bool Automata::on() // -включение автомата;
+bool Automata::on() // -ГўГЄГ«ГѕГ·ГҐГ­ГЁГҐ Г ГўГІГ®Г¬Г ГІГ ;
 {
 	if (!state)
 	{
@@ -42,7 +43,7 @@ bool Automata::on() // -включение автомата;
 	return false;
 }
 
-bool Automata::off() //-выключение автомата;
+bool Automata::off() //-ГўГ»ГЄГ«ГѕГ·ГҐГ­ГЁГҐ Г ГўГІГ®Г¬Г ГІГ ;
 {
 	if (state == WAIT)
 	{
@@ -56,7 +57,7 @@ bool Automata::off() //-выключение автомата;
 	}
 }
 
-bool Automata::coin(int coins) //-занесение денег на счёт пользователем;
+bool Automata::coin(int coins) //-Г§Г Г­ГҐГ±ГҐГ­ГЁГҐ Г¤ГҐГ­ГҐГЈ Г­Г  Г±Г·ВёГІ ГЇГ®Г«ГјГ§Г®ГўГ ГІГҐГ«ГҐГ¬;
 {
 	if (state == WAIT || state == ACCEPT) {
 		cash += coins;
@@ -67,17 +68,17 @@ bool Automata::coin(int coins) //-занесение денег на счёт пользователем;
 	return false;
 }
 
-vector<string> Automata::getMenu() // -считывание меню с напитками и ценами для пользователя;
+vector<string> Automata::getMenu() // -Г±Г·ГЁГІГ»ГўГ Г­ГЁГҐ Г¬ГҐГ­Гѕ Г± Г­Г ГЇГЁГІГЄГ Г¬ГЁ ГЁ Г¶ГҐГ­Г Г¬ГЁ Г¤Г«Гї ГЇГ®Г«ГјГ§Г®ГўГ ГІГҐГ«Гї;
 {
 	return menu;
 }
 
-enum STATES Automata::getState() // -считывание текущего состояния для пользователя;
+enum STATES Automata::getState() // -Г±Г·ГЁГІГ»ГўГ Г­ГЁГҐ ГІГҐГЄГіГ№ГҐГЈГ® Г±Г®Г±ГІГ®ГїГ­ГЁГї Г¤Г«Гї ГЇГ®Г«ГјГ§Г®ГўГ ГІГҐГ«Гї;
 {
 	return state;
 }
 
-bool Automata::choice(int product) // -выбор напитка пользователем;
+bool Automata::choice(int product) // -ГўГ»ГЎГ®Г° Г­Г ГЇГЁГІГЄГ  ГЇГ®Г«ГјГ§Г®ГўГ ГІГҐГ«ГҐГ¬;
 {
 	if (state == ACCEPT) {
 		switch (product)
@@ -106,7 +107,7 @@ bool Automata::choice(int product) // -выбор напитка пользователем;
 	return false;
 }
 
-bool Automata::check() // -проверка наличия необходимой суммы;
+bool Automata::check() // -ГЇГ°Г®ГўГҐГ°ГЄГ  Г­Г Г«ГЁГ·ГЁГї Г­ГҐГ®ГЎГµГ®Г¤ГЁГ¬Г®Г© Г±ГіГ¬Г¬Г»;
 {
 	if (state == CHECK) {
 		if (cash >= prices[productChoice]) {
@@ -122,7 +123,7 @@ bool Automata::check() // -проверка наличия необходимой суммы;
 	return false;
 }
 
-int Automata::cancel() // -отмена сеанса обслуживания пользователем;
+int Automata::cancel() // -Г®ГІГ¬ГҐГ­Г  Г±ГҐГ Г­Г±Г  Г®ГЎГ±Г«ГіГ¦ГЁГўГ Г­ГЁГї ГЇГ®Г«ГјГ§Г®ГўГ ГІГҐГ«ГҐГ¬;
 {
 	if (state == ACCEPT || state == CHECK) {
 		int temp = cash;
@@ -131,7 +132,7 @@ int Automata::cancel() // -отмена сеанса обслуживания пользователем;
 	}
 }
 
-bool Automata::cook() // -имитация процесса приготовления напитка;
+bool Automata::cook() // -ГЁГ¬ГЁГІГ Г¶ГЁГї ГЇГ°Г®Г¶ГҐГ±Г±Г  ГЇГ°ГЁГЈГ®ГІГ®ГўГ«ГҐГ­ГЁГї Г­Г ГЇГЁГІГЄГ ;
 {
 	if (state == COOK) {
 		*(aout) << "COOKING" << endl;
@@ -143,7 +144,7 @@ bool Automata::cook() // -имитация процесса приготовления напитка;
 	return false;
 }
 
-int Automata::finish() //-завершение обслуживания пользователя.
+int Automata::finish() //-Г§Г ГўГҐГ°ГёГҐГ­ГЁГҐ Г®ГЎГ±Г«ГіГ¦ГЁГўГ Г­ГЁГї ГЇГ®Г«ГјГ§Г®ГўГ ГІГҐГ«Гї.
 {
 	if (state == FINISH) {
 		int temp = cash;
