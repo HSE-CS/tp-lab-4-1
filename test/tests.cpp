@@ -55,7 +55,7 @@ Automata Coffee;
 Coffee.on();
 Coffee.coin(100);
 Coffee.choice("late latte");
-std::string expect = "CHECK";
+std::string expect = "WAIT";
 EXPECT_EQ(expect, Coffee.getState());
 }
 
