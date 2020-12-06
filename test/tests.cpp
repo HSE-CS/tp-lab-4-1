@@ -51,7 +51,7 @@ TEST(AutomataTest, test7) {
     example.coin(1);
     example.cancel();
     int st = example.getState();
-    EXPECT_EQ(st, waiting);
+    EXPECT_EQ(st, offline);
 }
 
 TEST(AutomataTest, test8) {

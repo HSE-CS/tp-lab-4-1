@@ -43,6 +43,9 @@ void Automata::off() {
 }
 
 void Automata::coin(int m) {
+    if (this->state == offline){
+        return;
+    }
     this->state = acceptingMoney;
     int money = 0;
     if (m == 0) {
