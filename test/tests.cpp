@@ -10,6 +10,7 @@ TEST(Automata, test_on) {
 
 TEST(Automata, test_off) {
 	Automata automata;
+	automata.on();
 	automata.off();
 	EXPECT_EQ(OFF, automata.getState());
 }
