@@ -2,7 +2,7 @@
 // Created by Алексей Трутнев on 24.11.2020.
 //
 
-#include "automata.h"
+#include "Automata.h"
 #include <string>
 #include <climits>
 
