@@ -52,6 +52,7 @@ TEST(AutomataTest, test7) {
 	example.coin(10);
 	example.coin(10);
 	example.coin(10);
+	example.coin(10);
 	bool st = example.choice(10);
 	EXPECT_EQ(st, true);
 }

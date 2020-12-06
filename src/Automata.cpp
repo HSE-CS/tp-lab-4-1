@@ -121,7 +121,7 @@ bool Automata::check(int number) {  // -проверка наличия необходимой суммы;
 }
 void Automata::cancel() {  // -отмена сеанса обслуживания пользователем;
     this->cash = 0;
-    off();
+    this->state = off_automat;
 }
 void Automata::cook() {  // -имитация процесса приготовления напитка;
     getState(4);
@@ -132,5 +132,5 @@ void Automata::cook() {  // -имитация процесса приготовления напитка;
 void Automata::finish() {  // -завершение обслуживания пользователя.
     std::cout << "\nСпасибо за заказ, приходите еще.\n";
     this->cash = 0;
-    off();
+    this->state = off_automat;
 }
