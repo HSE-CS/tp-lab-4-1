@@ -1,3 +1,4 @@
+// Copyright 2020 test
 #include "gtest/gtest.h"
 #include "Automata.h"
 
