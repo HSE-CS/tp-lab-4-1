@@ -87,5 +87,5 @@ void Automata::choice(int per)
         state=CHECK;
         check(per-1);
     }
-}
+}//
 

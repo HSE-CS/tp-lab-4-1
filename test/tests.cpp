@@ -76,6 +76,6 @@ TEST(Automata, test9)
     atom.cancel();
     STATES expected = WAIT;
     EXPECT_EQ(expected, atom.getState());
-}
+}//
 
 
