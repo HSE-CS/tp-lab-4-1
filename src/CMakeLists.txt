@@ -5,11 +5,11 @@ set(src Automata.cpp)
 set(headerMenu ${header_path}/Menu.h)
 set(srcMenu Menu.cpp)
 
-add_library(${PROJECT_NAME}/Automata.h SHARED
+add_library(Automata SHARED
   ${header}
   ${src})
   
-add_library(${PROJECT_NAME}/Menu.h SHARED
+add_library(Menu SHARED
   ${headerMenu}
   ${srcMenu})
   
