@@ -48,6 +48,10 @@ States Automata::getState() {
 	return state;
 }
 
+int Automata::getCash() {
+	return cash;
+}
+
 void Automata::choice(int pos) {
 	if (state != ACCEPT) {
 		std::cout << "Error: cannoot accept" << std::endl;
@@ -58,6 +62,7 @@ void Automata::choice(int pos) {
 }
 
 void Automata::check(int pos) {
+	state = CHECK;
 	if (cash >= Automata::prices[pos]) {
 		cash -= Automata::prices[pos];
 		std::cout << "Deposited cash:  " << cash << std::endl;

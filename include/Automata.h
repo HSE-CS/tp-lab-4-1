@@ -25,6 +25,7 @@ public:
 	void on();
 	void off();
 	void coin(int coin);
+	int getCash();
 	std::string getMenu();
 	States getState();
 	void choice(int pos);
