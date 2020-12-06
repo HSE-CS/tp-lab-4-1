@@ -1,6 +1,5 @@
 #include <iostream>
 
-#include "Menu.h"
 #include "Automata.h"
 
 int main() {
