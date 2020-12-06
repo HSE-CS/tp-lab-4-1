@@ -2,10 +2,17 @@ set(header_path "${${PROJECT_NAME}_SOURCE_DIR}/include")
 set(header ${header_path}/Automata.h)
 set(src Automata.cpp)
 
+set(headerMenu ${header_path}/Menu.h)
+set(srcMenu Menu.cpp)
 
 add_library(${PROJECT_NAME} SHARED
   ${header}
   ${src})
+  
+add_library(${PROJECT_NAME} SHARED
+  ${headerMenu}
+  ${srcMenu})
+  
 target_include_directories(${PROJECT_NAME}
   PUBLIC ${CMAKE_CURRENT_BINARY_DIR}
          ${${PROJECT_NAME}_SOURCE_DIR}/include)
@@ -29,3 +36,4 @@ install(TARGETS ${PROJECT_NAME}.info
 		RUNTIME DESTINATION "${tool_dest}"
     COMPONENT library)
 install(FILES ${header} DESTINATION "${include_dest}")
+install(FILES ${headerMenu} DESTINATION "${include_dest}")

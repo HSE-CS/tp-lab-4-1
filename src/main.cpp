@@ -1,7 +1,7 @@
 #include <iostream>
 
-#include "./include/Menu.h"
-#include "./include/Automata.h"
+#include "Menu.h"
+#include "Automata.h"
 
 int main() {
     Menu menu;
