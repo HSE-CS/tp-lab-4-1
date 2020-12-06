@@ -3,9 +3,9 @@
 
 int main() 
 {
-    Automata A;
-    A.on();
-    A.coin(2);
-    A.choice();
-    A.check(1);
+   Automata test;
+   test.on();
+   test.coin(2);
+   test.choice();
+   test.check(1);
 }
