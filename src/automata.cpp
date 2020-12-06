@@ -1,5 +1,5 @@
 // Copyright 2020 Elizaveta Drobot
-#include "automata.h"
+#include "Automata.h"
 #include <cmath>
 #include <algorithm>
 #include <cstdlib>
@@ -11,24 +11,24 @@ std::ifstream fin_menu("menu.txt");
 std::ifstream fin_prices("prices.txt");
 std::ifstream fin_kod("kod.txt");
 
-automata::automat() {
+Automata::automat() {
     getMenu();
     getState(1);
     this->cash = 0;
 }
-void automata::on() {  // -включение автомата;
+void Automata::on() {  // -включение автомата;
     if (this->state == 1) {
         getState(0);
     }
     printState();
 }
-void automata::off() {  // -выключение автомата;
+void Automata::off() {  // -выключение автомата;
     if (this->state == 0) {
         getState(1);
     }
     printState();
 }
-void automata::coin(int a) {  // -занесение денег на счёт пользователем;
+void Automata::coin(int a) {  // -занесение денег на счёт пользователем;
     getState(2);
     printState();
     if ((a == 1) || (a == 2) || (a == 5) || (a == 10) || (a == 50) || (a == 100) || (a == 200)) {
@@ -39,7 +39,7 @@ void automata::coin(int a) {  // -занесение денег на счёт пользователем;
     }
     std::cout << "\nСумма на счету: " << cash << "\n";
 }
-void automata::getMenu() {
+void Automata::getMenu() {
     for (int i = 0; !fin_menu.eof(); i++) {
         array_menu.resize(array_menu.size() + 1);
         array_prices.resize(array_prices.size() + 1);
@@ -52,17 +52,17 @@ void automata::getMenu() {
     array_prices.resize(array_prices.size() - 5);
     array_kod.resize(array_kod.size() - 5);
 }
-void automata::printMenu() {
+void Automata::printMenu() {
     for (int i = 0; i < this->array_menu.size(); i++) {
         std::cout << "\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~";
         std::cout << "\n " << array_menu[i] << "= " << array_prices[i] << "          kod = " << array_kod[i] <<"  ";
         std::cout << "\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
     }
 }
-void automata::getState(int a) {
+void Automata::getState(int a) {
     this->state = a;
 }
-int automata::printState() {  // -считывание текущего состояния для пользователя;
+int Automata::printState() {  // -считывание текущего состояния для пользователя;
     switch (this->state) {
     case on_automat:
         std::cout << "\nАвтомат включен";
@@ -86,7 +86,7 @@ int automata::printState() {  // -считывание текущего состояния для пользователя
         break;
     }
 }
-bool automata::choice(int kod) {  // -выбор напитка пользователем;
+bool Automata::choice(int kod) {  // -выбор напитка пользователем;
     if (kod > array_kod[array_kod.size()-1]) {
         std::cout << "\nНеправильный код напитка. Попробуйте еще раз.";
         return 0;
@@ -104,7 +104,7 @@ bool automata::choice(int kod) {  // -выбор напитка пользователем;
         }
     }
 }
-bool automata::check(int number) {  // -проверка наличия необходимой суммы;
+bool Automata::check(int number) {  // -проверка наличия необходимой суммы;
     if (cash >= number) {
         cash = cash - number;
         total_cash += number;
@@ -119,17 +119,17 @@ bool automata::check(int number) {  // -проверка наличия необходимой суммы;
         return 0;
     }
 }
-void automata::cancel() {  // -отмена сеанса обслуживания пользователем;
+void Automata::cancel() {  // -отмена сеанса обслуживания пользователем;
     this->cash = 0;
     off();
 }
-void automata::cook() {  // -имитация процесса приготовления напитка;
+void Automata::cook() {  // -имитация процесса приготовления напитка;
     getState(4);
     printState();
     std::this_thread::sleep_for(std::chrono::seconds(3));
     finish();
 }
-void automata::finish() {  // -завершение обслуживания пользователя.
+void Automata::finish() {  // -завершение обслуживания пользователя.
     std::cout << "\nСпасибо за заказ, приходите еще.\n";
     this->cash = 0;
     off();

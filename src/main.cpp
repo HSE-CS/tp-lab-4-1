@@ -1,10 +1,10 @@
 // Copyright 2020 Elizaveta Drobot
-#include "automata.h"
+#include "Automata.h"
 
 
 int main() {
     setlocale(LC_ALL, "Russian");
-    automata person1;
+    Automata person1;
     person1.on();
     int a = 0;
     std::cout << "Автомат готов к использованию, пожалуйста положите деньги на счет		\n";

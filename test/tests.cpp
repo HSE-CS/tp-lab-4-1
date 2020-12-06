@@ -1,22 +1,22 @@
 // Copyright 2020 Drobot Elizaveta
 #include "gtest/gtest.h"
-#include "automata.h"
+#include "Automata.h"
 
-TEST(automataTest, test1) {
-	automata example;
+TEST(AutomataTest, test1) {
+	Automata example;
 	int st = example.printState();
 	EXPECT_EQ(st, off_automat);
 }
 
-TEST(automataTest, test2) {
-	automata example;
+TEST(AutomataTest, test2) {
+	Automata example;
 	example.on();
 	int st = example.printState();
 	EXPECT_EQ(st, on_automat);
 }
 
-TEST(automataTest, test3) {
-	automata example;
+TEST(AutomataTest, test3) {
+	Automata example;
 	example.on();
 	example.coin(2);
 	example.cancel();
@@ -24,32 +24,32 @@ TEST(automataTest, test3) {
 	EXPECT_EQ(st, off_automat);
 }
 
-TEST(automataTest, test4) {
-	automata example;
+TEST(AutomataTest, test4) {
+	Automata example;
 	example.coin(2);
 	example.choice(12);
 	bool st = example.check(12);
 	EXPECT_EQ(st, false);
 }
 
-TEST(automataTest, test5) {
-	automata example;
+TEST(AutomataTest, test5) {
+	Automata example;
 	example.coin(100);
 	example.choice(12);
 	bool st = example.check(12);
 	EXPECT_EQ(st, true);
 }
 
-TEST(automataTest, test6) {
-	automata example;
+TEST(AutomataTest, test6) {
+	Automata example;
 	example.coin(1);
 	example.cancel();
 	int st = example.printState();
 	EXPECT_EQ(st, off_automat);
 }
 
-TEST(automataTest, test7) {
-	automata example;
+TEST(AutomataTest, test7) {
+	Automata example;
 	example.coin(10);
 	example.coin(10);
 	example.coin(10);
