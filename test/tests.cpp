@@ -1,29 +1,27 @@
 #include <gtest/gtest.h>
 #include "Automata.h"
 
-TEST(automata, test) {
+TEST(automata, test1) {
   Automata test;
   STATES expected = OFF;
   EXPECT_EQ(expected, test.getState());
 }
 
-TEST(automata, test) {
+TEST(automata, test2) {
   Automata test;
-  test.on();
   STATES expected = WAIT;
   EXPECT_EQ(expected, test.getState());
 }
 
 
-TEST(automata, test) {
+TEST(automata, test3) {
   Automata test;
-  test.on();
   test.coin(2);
   STATES expected = ACCEPT;
   EXPECT_EQ(expected, test.getState());
 }
 
-TEST(automata, test) {
+TEST(automata, test4) {
   Automata test;
   test.coin(2);
   STATES expected = OFF;
@@ -31,7 +29,7 @@ TEST(automata, test) {
 }
 
 
-TEST(automata, test) {
+TEST(automata, test5) {
   Automata test;
   test.on();
   test.coin(2);
@@ -40,7 +38,7 @@ TEST(automata, test) {
   EXPECT_EQ(expected, test.getState());
 }
 
-TEST(automata, test) {
+TEST(automata, test6) {
   Automata test;
   test.on();
   test.coin(1);
