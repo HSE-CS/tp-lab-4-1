@@ -1,0 +1,6 @@
+#ifndef TP_LAB_4_1_AUTOMATA_H
+#define TP_LAB_4_1_AUTOMATA_H
+
+
+
+#endif //TP_LAB_4_1_AUTOMATA_H
