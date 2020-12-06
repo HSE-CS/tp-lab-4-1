@@ -26,7 +26,7 @@ public:
 	int coin(int money);
 	void getMenu();
 	STATES getState();
-	int choice(unsigned int choice);
+	int choice(unsigned int choice_id);
 	bool check(unsigned int choice);
 	void cancel();
 	void cook();

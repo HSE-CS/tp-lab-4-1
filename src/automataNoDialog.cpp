@@ -81,9 +81,9 @@ STATES Automata::getState()
 	return this->state;
 }
 
-int Automata::choice(unsigned int choice)
+int Automata::choice(unsigned int choice_id)
 {
-	return this->check(choice) ? 0 : -1;
+	return this->check(choice_id) ? 0 : -1;
 }
 
 bool Automata::check(unsigned int choice)
@@ -91,12 +91,12 @@ bool Automata::check(unsigned int choice)
 	this->state = STATES::CHECK;
 	if (this->prices[choice] <= this->cash)
 	{
-		cout << "[SUCCESS]" << endl;
+		//cout << "[SUCCESS]" << endl;
 		return true;
 	}
 	else
 	{
-		cout << "[ERROR]" << endl << "Not enough money!" << endl;
+		//cout << "[ERROR]" << endl << "Not enough money!" << endl;
 		//this->cancel();
 		return false;
 	}
