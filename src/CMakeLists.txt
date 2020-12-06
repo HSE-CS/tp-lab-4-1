@@ -27,12 +27,17 @@ target_link_libraries(Menu
   pthread)
   
 add_executable(${PROJECT_NAME}.info main.cpp)
-target_include_directories(${PROJECT_NAME}.info
+target_include_directories(Automata.info
   PUBLIC ${CMAKE_CURRENT_BINARY_DIR}
          ${${PROJECT_NAME}_SOURCE_DIR}/include)
-target_link_libraries(${PROJECT_NAME}.info
-  ${PROJECT_NAME})
-
+target_link_libraries(Automata.info
+  Automata)
+  
+target_include_directories(Menu.info
+  PUBLIC ${CMAKE_CURRENT_BINARY_DIR}
+         ${${PROJECT_NAME}_SOURCE_DIR}/include)
+target_link_libraries(Menu.info
+  Menu)
 
 install(TARGETS Automata
 		LIBRARY DESTINATION "${lib_dest}"
