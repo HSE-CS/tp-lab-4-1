@@ -56,6 +56,7 @@ TEST(AutomataTest, test7) {
 
 TEST(AutomataTest, test8) {
     Automata example;
+    example.on();
     example.coin(10);
     example.coin(10);
     example.coin(10);
