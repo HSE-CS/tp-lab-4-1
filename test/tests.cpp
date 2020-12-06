@@ -22,7 +22,7 @@ TEST(task, test_3) {
   Automata autmat;
   autmat.on();
   autmat.coin(69);
-  autmat.choice(4);
+  autmat.choice("hot chocolate");
   EXPECT_FALSE(autmat.check());
 
 }
