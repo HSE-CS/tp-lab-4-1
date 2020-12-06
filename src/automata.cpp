@@ -1,7 +1,4 @@
-//
-// Created by Алексей Трутнев on 24.11.2020.
-//
-
+// Copyright 2020 test
 #include "Automata.h"
 #include <string>
 #include <climits>
