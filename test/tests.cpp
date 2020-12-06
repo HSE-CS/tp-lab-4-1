@@ -58,7 +58,7 @@ TEST(automata_t, test7) {
   avt.on();
   avt.coin(30);
   avt.choice(1)
-  EXPECT_FALSE(false, avt.check());
+  EXPECT_FALSE(avt.check());
 
 }
 
@@ -68,7 +68,7 @@ TEST(automata_t, test8) {
   avt.on();
   avt.coin(300);
   avt.choice(5);
-  EXPECT_TRUE(true, avt.check());
+  EXPECT_TRUE(avt.check());
 
 }
 

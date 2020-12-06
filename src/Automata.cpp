@@ -41,9 +41,9 @@ void Automata::getMenu() {
   }
   std::cout << std::endl;
 }
-void Automata::getState() {
+STATES Automata::getState() {
 
-  std::cout << states[state] << std::endl;
+  return this->state;
 
 }
 void Automata::choice( unsigned int str) {
