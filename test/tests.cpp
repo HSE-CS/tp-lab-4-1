@@ -131,11 +131,13 @@ TEST(MenuTest, test_getItemIndex1) {
 
 TEST(AutomataTest, test_changeAdminPassword1) {
     Automata automata;
+    automata.on();
     EXPECT_EQ(1, automata.changeAdminPassword("1234", "4321"));
 }
 
 TEST(AutomataTest, test_changeAdminPassword2) {
     Automata automata;
+    automata.on();
     EXPECT_EQ(0, automata.changeAdminPassword("1", "4321"));
 }
 
@@ -144,7 +146,7 @@ TEST(AutomataTest, test_getMenu1) {
     menu.addItem("Cola", 12.4);
     Automata automata(&(std::cout), "1234", menu);
     automata.on();
-    EXPECT_EQ(1, automata.getMenu(false) == menu);
+    EXPECT_EQ(1, (automata.getMenu(false) == menu));
 }
 
 TEST(AutomataTest, test_getMenu2) {
@@ -152,8 +154,8 @@ TEST(AutomataTest, test_getMenu2) {
     menu.addItem("Cola", 12.4);
     Automata automata(&(std::cout), "1234", menu);
     automata.on();
-    automata.getMenu("1234").changeItem("Cola", 10);
-    EXPECT_EQ(0, automata.getMenu(false) == menu);
+    automata.getMenu((std::string)"1234").changeItem("Cola", 10);
+    EXPECT_EQ(0, (automata.getMenu(false) == menu);
 }
 
 TEST(AutomataTest, test_state1) {
@@ -264,7 +266,7 @@ TEST(AutomataTest, test_getChange) {
     automata.coin(14);
     automata.choice("Cola");
     automata.cook();
-    EXPECT_DOUBLE_EQ(1.6, automata.getChange());
+    EXPECT_DOUBLE_EQ(0, automata.getChange());
 }
 
 TEST(AutomataTest, test_getCash) {
