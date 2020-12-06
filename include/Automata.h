@@ -3,7 +3,7 @@
 #define AUTOMATA_H
 #include <iostream>
 #include <string>
-#include <windows.h>
+//#include <windows.h>
 #include <stdlib.h>
 #include <vector>
 #define COUNT_OF_FOODS 4
