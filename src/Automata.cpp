@@ -19,7 +19,7 @@ void Automata::off() {
 }
 
 void Automata::coin(double cash) {
-    if (state == ACCEPT || state == WAIT) {
+    if ((state == ACCEPT || state == WAIT) && cash > 0) {
         this->cash += cash;
 		state = ACCEPT;
 	}
