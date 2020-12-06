@@ -12,7 +12,7 @@ std::ifstream fin_prices("prices.txt");
 std::ifstream fin_kod("kod.txt");
 
 Automata::Automata() {
-    getMenu();
+    //getMenu();
     getState(1);
     this->cash = 0;
 }
@@ -39,19 +39,19 @@ void Automata::coin(int a) {  // -занесение денег на счёт пользователем;
     }
     std::cout << "\nСумма на счету: " << cash << "\n";
 }
-void Automata::getMenu() {
-    for (int i = 0; !fin_menu.eof(); i++) {
-        array_menu.resize(array_menu.size() + 1);
-        array_prices.resize(array_prices.size() + 1);
-        array_kod.resize(array_kod.size() + 1);
-        fin_menu >> array_menu[i];
-        fin_prices >> array_prices[i];
-        fin_kod >> array_kod[i];
-    }
-    array_menu.resize(array_menu.size() - 5);
-    array_prices.resize(array_prices.size() - 5);
-    array_kod.resize(array_kod.size() - 5);
-}
+//void Automata::getMenu() {
+//    for (int i = 0; !fin_menu.eof(); i++) {
+//        array_menu.resize(array_menu.size() + 1);
+//        array_prices.resize(array_prices.size() + 1);
+//        array_kod.resize(array_kod.size() + 1);
+//        fin_menu >> array_menu[i];
+//        fin_prices >> array_prices[i];
+//        fin_kod >> array_kod[i];
+//    }
+//    array_menu.resize(array_menu.size() - 5);
+//    array_prices.resize(array_prices.size() - 5);
+//    array_kod.resize(array_kod.size() - 5);
+//}
 void Automata::printMenu() {
     for (int i = 0; i < this->array_menu.size(); i++) {
         std::cout << "\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~";
