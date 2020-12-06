@@ -30,7 +30,7 @@ TEST (Automata, testOff1) {
     EXPECT_EQ(5.0, c.getReminder());
 }
 
-TEST (Automata, testOff1) {
+TEST (Automata, testOff2) {
     Automata c;
     c.on();
     c.coin(5.0);
