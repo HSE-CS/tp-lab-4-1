@@ -6,7 +6,7 @@
 
 TEST(Constructor, test1) {
 Automata test;
-EXPECT_EQ(test.getState(), std::to_string("OFF"));
+EXPECT_EQ(test.getState(), "OFF");
 }
 
 TEST(STATES, test1) {
