@@ -35,8 +35,7 @@ TEST(AutomataTest, test4) {
 TEST(AutomataTest, test5) {
 	Automata example;
 	example.coin(100);
-	example.choice(12);
-	bool st = example.check(12);
+	bool st = example.choice(12);
 	EXPECT_EQ(st, true);
 }
 
@@ -53,7 +52,6 @@ TEST(AutomataTest, test7) {
 	example.coin(10);
 	example.coin(10);
 	example.coin(10);
-	example.choice(10);
-	int st = example.printState();
-	EXPECT_EQ(st, off_automat);
+	bool st = example.choice(10);
+	EXPECT_EQ(st, true);
 }

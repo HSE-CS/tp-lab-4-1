@@ -93,7 +93,7 @@ bool Automata::choice(int kod) {  // -выбор напитка пользователем;
         return 0;
     }
     else {
-        for (int i = 0; i <= array_kod.size(); i++) {
+        for (int i = 0; i < array_kod.size(); i++) {
             if (kod == array_kod[i]) {
 
                 if (check(array_prices[i]) == 0) {
