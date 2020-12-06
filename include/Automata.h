@@ -29,7 +29,7 @@ private:
 	int cash = 0;
 	std::vector<std::string> menu = { "Espresso", "Americano", "Cappuccino", "Latte", "Chocolate", "Hot milk", "Tea" };
 	std::vector<int> prices = { 25, 40, 40, 40, 35, 35, 20};
-	States state;
+	States state = States::OFF;
 };
 
 #endif 
