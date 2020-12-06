@@ -56,15 +56,8 @@ TEST(AutomataTest, test8) {
 	test.finish();
 }
 
-TEST(AutomataTest, test9) {
-	Automata test;
-	test.on();
-	test.coin(10);
-	test.coin(30);
-	EXPECT_EQ(test.getCoin(), 40);             
-}
 
-TEST(AutomataTest, test10) {
+TEST(AutomataTest, test9) {
 	Automata test;
 	test.on();
 	std::string menu = "1 Americano 25\n2 Espresso 35\n3 Cappuccino 40\n4 Long Black 38\n5 Hot Chocolate 30\n";
