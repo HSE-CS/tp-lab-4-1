@@ -1,9 +1,6 @@
-//
-// Created by Алексей Трутнев on 24.11.2020.
-//
-
-#ifndef AUTOMATA_AUTOMATA_H
-#define AUTOMATA_AUTOMATA_H
+// Copyright 2020 test
+#ifndef AUTOMATA_H
+#define AUTOMATA_H
 
 #include <iostream>
 #include <string>
@@ -44,4 +41,4 @@ public: // Доступное пользователю
 };
 
 
-#endif //AUTOMATA_AUTOMATA_H
+#endif //AUTOMATA_H
