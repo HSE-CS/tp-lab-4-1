@@ -171,16 +171,11 @@ void Automata::printBeautifulMenu()
 	if (state != OFF) {
 		map <string, int> Menu;
 		for (int i = 0; i < menu.size(); i++) {
-			char *temp = new char;
-			itoa(i + 1, temp, 10);
-			string tempStr = string(temp);
-			tempStr += ' ';
-			tempStr += menu[i];
-			Menu.insert(make_pair(tempStr, prices[i]));
+			Menu.insert(make_pair(menu[i], prices[i]));
 		}
 		map <string, int>::iterator i;
 		for (i = Menu.begin(); i != Menu.end(); i++) {
-			(*aout) << i->first << ' ' << i->second << endl;
+			(*aout) << i << ' ' << i->first << ' ' << i->second << endl;
 		}
 	}
 }
