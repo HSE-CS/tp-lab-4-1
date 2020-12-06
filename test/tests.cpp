@@ -43,7 +43,7 @@ TEST(automata, test7) {
   Automata a;
   a.on();
   a.coin(10.2);
-  a.cacel();
+  a.cancel();
   EXPECT_EQ(0, a.getCash());
 }
 
