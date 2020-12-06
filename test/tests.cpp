@@ -47,14 +47,14 @@ TEST(Automata, test_choice_with_cash) {
 	EXPECT_EQ(20, automata.getCash());
 }
 
-TEST(Automata, test_choice) {
+TEST(Automata, test_finish_with_error) {
 	Automata automata;
 	automata.coin(50);
 	automata.choice(3);
 	EXPECT_EQ(0, automata.getCash());
 }
 
-TEST(Automata, test_choice) {
+TEST(Automata, test_finish) {
 	Automata automata;
 	automata.coin(50);
 	automata.choice(1);
