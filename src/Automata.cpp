@@ -38,7 +38,7 @@ std::string Automata::getMenu() {
 	} else {
 		std::string menu = "";
 		for (int i = 0; i < SIZE; i++) {
-			menu += std::to_string(i) + "  " + Automata::menu[i] + "  " + std::to_string(Automata::prices[i]) + "\n";
+			menu += std::to_string(i+1) + "  " + Automata::menu[i] + "  " + std::to_string(Automata::prices[i]) + "\n";
 		}
 		return menu;
 	}
@@ -52,7 +52,7 @@ void Automata::choice(int pos) {
 	if (state != ACCEPT) {
 		std::cout << "Error: cannoot accept" << std::endl;
 	} else {
-		int choice = pos;
+		int choice = pos - 1;
 		check(choice);
 	}
 }
