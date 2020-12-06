@@ -6,7 +6,7 @@
 #include <string>
 
 TEST(MenuTest, test_constructor1) {
-    char* items[] = {"apple", "book", "drink"};
+    const char* items[] = {"apple", "book", "drink"};
     double prices[] = {12.4, 124.6, 10.8};
     Menu menu(3, items, prices);
     EXPECT_EQ(12.4, menu.getPrice("apple"));
@@ -112,7 +112,7 @@ TEST(MenuTest, test_operator2) {
     EXPECT_EQ(14.3, menu1.getPrice("pineapple"));
 }
 
-TEST(MenuTest, test_operator2) {
+TEST(MenuTest, test_operator3) {
     Menu menu;
     menu.addItem("apple", 13.4);
     menu.addItem("pineapple", 14.3);
@@ -131,18 +131,18 @@ TEST(MenuTest, test_getItemIndex1) {
 
 TEST(AutomataTest, test_changeAdminPassword1) {
     Automata automata;
-    EXPECT_EQ(1, automata.changePassword("1234", "4321"));
+    EXPECT_EQ(1, automata.changeAdminPassword("1234", "4321"));
 }
 
 TEST(AutomataTest, test_changeAdminPassword2) {
     Automata automata;
-    EXPECT_EQ(0, automata.changePassword("1", "4321"));
+    EXPECT_EQ(0, automata.changeAdminPassword("1", "4321"));
 }
 
 TEST(AutomataTest, test_getMenu1) {
     Menu menu;
     menu.addItem("Cola", 12.4);
-    Automata automata(&(std::cout), menu);
+    Automata automata(&(std::cout), "1234", menu);
     automata.on();
     EXPECT_EQ(1, automata.getMenu(false) == menu);
 }
@@ -150,7 +150,7 @@ TEST(AutomataTest, test_getMenu1) {
 TEST(AutomataTest, test_getMenu2) {
     Menu menu;
     menu.addItem("Cola", 12.4);
-    Automata automata(&(std::cout), menu);
+    Automata automata(&(std::cout), "1234", menu);
     automata.on();
     automata.getMenu("1234").changeItem("Cola", 10);
     EXPECT_EQ(0, automata.getMenu(false) == menu);
@@ -159,14 +159,14 @@ TEST(AutomataTest, test_getMenu2) {
 TEST(AutomataTest, test_state1) {
     Menu menu;
     menu.addItem("Cola", 12.4);
-    Automata automata(&(std::cout), menu);
+    Automata automata(&(std::cout), "1234", menu);
     EXPECT_EQ(0, automata.getState());
 }
 
 TEST(AutomataTest, test_state2) {
     Menu menu;
     menu.addItem("Cola", 12.4);
-    Automata automata(&(std::cout), menu);
+    Automata automata(&(std::cout), "1234", menu);
     automata.on();
     EXPECT_EQ(1, automata.getState());
 }
@@ -174,7 +174,7 @@ TEST(AutomataTest, test_state2) {
 TEST(AutomataTest, test_state3) {
     Menu menu;
     menu.addItem("Cola", 12.4);
-    Automata automata(&(std::cout), menu);
+    Automata automata(&(std::cout), "1234", menu);
     automata.on();
     automata.coin(10);
     EXPECT_EQ(2, automata.getState());
@@ -183,7 +183,7 @@ TEST(AutomataTest, test_state3) {
 TEST(AutomataTest, test_state4) {
     Menu menu;
     menu.addItem("Cola", 12.4);
-    Automata automata(&(std::cout), menu);
+    Automata automata(&(std::cout), "1234", menu);
     automata.on();
     automata.coin(14);
     EXPECT_EQ(14, automata.cancel());
@@ -193,7 +193,7 @@ TEST(AutomataTest, test_state4) {
 TEST(AutomataTest, test_state5) {
     Menu menu;
     menu.addItem("Cola", 12.4);
-    Automata automata(&(std::cout), menu);
+    Automata automata(&(std::cout), "1234", menu);
     automata.on();
     automata.coin(10);
     automata.choice("Cola");
@@ -202,7 +202,7 @@ TEST(AutomataTest, test_state5) {
 TEST(AutomataTest, test_state6) {
     Menu menu;
     menu.addItem("Cola", 12.4);
-    Automata automata(&(std::cout), menu);
+    Automata automata(&(std::cout), "1234", menu);
     automata.on();
     automata.coin(14);
     automata.choice("Cola");
@@ -212,7 +212,7 @@ TEST(AutomataTest, test_state6) {
 TEST(AutomataTest, test_state7) {
     Menu menu;
     menu.addItem("Cola", 12.4);
-    Automata automata(&(std::cout), menu);
+    Automata automata(&(std::cout), "1234", menu);
     automata.on();
     automata.coin(14);
     automata.choice("Cola");
@@ -223,7 +223,7 @@ TEST(AutomataTest, test_state7) {
 TEST(AutomataTest, test_state8) {
     Menu menu;
     menu.addItem("Cola", 12.4);
-    Automata automata(&(std::cout), menu);
+    Automata automata(&(std::cout), "1234", menu);
     automata.on();
     automata.coin(14);
     automata.choice("Cola");
@@ -234,7 +234,7 @@ TEST(AutomataTest, test_state8) {
 TEST(AutomataTest, test_state9) {
     Menu menu;
     menu.addItem("Cola", 12.4);
-    Automata automata(&(std::cout), menu);
+    Automata automata(&(std::cout), "1234", menu);
     automata.on();
     automata.coin(14);
     automata.choice("Cola");
@@ -246,7 +246,7 @@ TEST(AutomataTest, test_state9) {
 TEST(AutomataTest, test_state10) {
     Menu menu;
     menu.addItem("Cola", 12.4);
-    Automata automata(&(std::cout), menu);
+    Automata automata(&(std::cout), "1234", menu);
     automata.on();
     automata.coin(14);
     automata.choice("Cola");
@@ -259,7 +259,7 @@ TEST(AutomataTest, test_state10) {
 TEST(AutomataTest, test_getChange) {
     Menu menu;
     menu.addItem("Cola", 12.4);
-    Automata automata(&(std::cout), menu, 12);
+    Automata automata(&(std::cout), "1234", menu);
     automata.on();
     automata.coin(14);
     automata.choice("Cola");
@@ -270,7 +270,7 @@ TEST(AutomataTest, test_getChange) {
 TEST(AutomataTest, test_getCash) {
     Menu menu;
     menu.addItem("Cola", 12.4);
-    Automata automata(&(std::cout), menu, 12);
+    Automata automata(&(std::cout), "1234", menu, 12);
     automata.on();
     automata.coin(14);
     automata.choice("Cola");
