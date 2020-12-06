@@ -55,7 +55,7 @@ TEST(automata, test8) {
 	aut.on();
 	aut.coin(5);
 	aut.choice("hot water");
-	EXPECT_FALL(aut.check());
+	EXPECT_FALSE(aut.check());
 }
 
 TEST(automata, test9) {
