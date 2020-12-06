@@ -19,7 +19,7 @@ TEST(automata, test1) {
 TEST(automata, test2) {
     Automata test;
     test.on();
-    EXPECT_EQ(WAIT, a.getState());
+    EXPECT_EQ(WAIT, test.getState());
 }
 
 TEST(automata, test3) {
@@ -34,7 +34,7 @@ TEST(automata, test4) {
     test.coin(35);
     test.choice("Milk");
     test.check();
-    EXPECT_EQ(CHECK, coffee_machine.getState());
+    EXPECT_EQ(CHECK, test.getState());
 }
 TEST(automata, test5) {
     Automata test;
