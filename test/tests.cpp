@@ -19,6 +19,7 @@ TEST(Automata, test2)
 TEST(Automata, test3)
 {
     Automata atom;
+    atom.on();
     atom.coin(20);
     STATES expected=ACCEPT;
     EXPECT_EQ(expected, atom.getState());
@@ -38,7 +39,7 @@ TEST(Automata, test5)
 {
     Automata atom;
     atom.on();
-    string expected="tea 40\nmilk 50\ncoffee 90\nchocolate 75";
+    string expected="tea 40\nmilk 50\ncoffee 90\nchocolate 75\n";
     EXPECT_EQ(expected, atom.getMenu());
 }
 
