@@ -85,6 +85,7 @@ int Automata::printState() {  // -считывание текущего состояния для пользователя
         return cooking;
         break;
     }
+    return off_automat;
 }
 bool Automata::choice(int kod) {  // -выбор напитка пользователем;
     if (kod > array_kod[array_kod.size()-1]) {
