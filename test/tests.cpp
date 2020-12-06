@@ -8,7 +8,7 @@ EXPECT_EQ(0, automata.getState());
 TEST(lab4, test2){
 Automata automata;
 automata.on();
-EXPECT_EQ(1, automata.getState(););
+EXPECT_EQ(1, automata.getState());
 }
 
 TEST(lab4, test3)
