@@ -28,3 +28,13 @@ TEST(automata, test3) {
     test.coin(100);
     EXPECT_EQ(ACCEPT, test.getState());
 }
+TEST(automata, test4) {
+    Automata test;
+    test.on();
+    test.coin(35);
+    test.choice("Milk");
+    test.check();
+    test.cook();
+    test.finish();
+    EXPECT_EQ(WAIT, test.getState());
+}
