@@ -9,6 +9,7 @@ TEST(automata, test1) {
 
 TEST(automata, test2) {
   Automata test;
+  test.on();
   STATES expected = WAIT;
   EXPECT_EQ(expected, test.getState());
 }
@@ -16,6 +17,7 @@ TEST(automata, test2) {
 
 TEST(automata, test3) {
   Automata test;
+  test.on();
   test.coin(2);
   STATES expected = ACCEPT;
   EXPECT_EQ(expected, test.getState());
