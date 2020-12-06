@@ -34,10 +34,16 @@ target_link_libraries(${PROJECT_NAME}.info
   ${PROJECT_NAME})
 
 
-install(TARGETS ${PROJECT_NAME}
+install(TARGETS Automata
 		LIBRARY DESTINATION "${lib_dest}"
     ARCHIVE DESTINATION "${lib_dest}"
     COMPONENT library)
+    
+install(TARGETS Menu
+		LIBRARY DESTINATION "${lib_dest}"
+    ARCHIVE DESTINATION "${lib_dest}"
+    COMPONENT library)
+
 install(TARGETS ${PROJECT_NAME}.info
 		RUNTIME DESTINATION "${tool_dest}"
     COMPONENT library)
