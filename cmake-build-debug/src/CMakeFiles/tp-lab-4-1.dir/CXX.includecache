@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/Automata.h
+cmath
+-
+iostream
+-
+
+E:/progs/tp-lab-4-1/src/Automata.cpp
+Automata.h
+E:/progs/tp-lab-4-1/src/Automata.h
+
