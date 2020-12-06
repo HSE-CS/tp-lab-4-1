@@ -1,27 +1,27 @@
 #include <gtest/gtest.h>
 #include "Automata.h"
 
-TEST(automata_test, test){
+TEST(automata_test, test1){
     Automata bar;
     bar.on();
     EXPECT_EQ(WAIT, bar.getCondition());
 }
 
-TEST(automata_test, test){
+TEST(automata_test, test2){
     Automata bar;
     bar.on();
     bar.coin(128);
     EXPECT_EQ(128, bar.getMoneyAmount());
 }
 
-TEST(automata_test, test){
+TEST(automata_test, test3){
     Automata bar;
     bar.on();
     bar.coin(128);
     EXPECT_EQ(bar.getCondition(), ACCEPT);
 }
 
-TEST(automata_test, test){
+TEST(automata_test, test4){
     Automata bar;
     bar.on();
     bar.coin(128);
@@ -29,7 +29,7 @@ TEST(automata_test, test){
     EXPECT_EQ(bar.getCondition(), CHECK);
 }
 
-TEST(automata_test, test){
+TEST(automata_test, test5){
     Automata bar;
     bar.on();
     bar.coin(128);
@@ -38,7 +38,7 @@ TEST(automata_test, test){
     EXPECT_EQ(bar.getChoice(), choice);
 }
 
-TEST(automata_test, test){
+TEST(automata_test, test6){
     Automata bar;
     bar.on();
     bar.coin(128);
@@ -47,7 +47,7 @@ TEST(automata_test, test){
     EXPECT_TRUE(bar.check());
 }
 
-TEST(automata_test, test){
+TEST(automata_test, test7){
     Automata bar;
     bar.on();
     bar.coin(128);
@@ -56,7 +56,7 @@ TEST(automata_test, test){
     EXPECT_FALSE(bar.check());
 }
 
-TEST(automata_test, test){
+TEST(automata_test, test8){
     Automata bar;
     bar.on();
     bar.coin(128);
@@ -66,7 +66,7 @@ TEST(automata_test, test){
     EXPECT_EQ(bar.getCondition(), COOK);
 }
 
-TEST(automata_test, test){
+TEST(automata_test, test9){
     Automata bar;
     bar.on();
     bar.coin(128);
@@ -77,7 +77,7 @@ TEST(automata_test, test){
     EXPECT_EQ(bar.getCondition(), WAIT);
 }
 
-TEST(automata_test, test){
+TEST(automata_test, test10){
     Automata bar;
     bar.on();
     bar.coin(128);
