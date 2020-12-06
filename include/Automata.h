@@ -37,6 +37,12 @@ private:
 public:
     Automata();
 
+    int getCondition();
+
+    int getMoneyAmount();
+
+    int getChoice();
+
     void on();
 
     void off();
