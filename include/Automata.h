@@ -4,15 +4,17 @@
 
 #include <string>
 
-class Automata {
- private:
-    enum STATES {
+enum STATES {
         OFF,
         WAIT,
         ACCEPT,
         CHECK,
         COOK
     };
+
+class Automata {
+ private:
+    
     double cash;
     std::string menu[3] = {
         "Mario",
