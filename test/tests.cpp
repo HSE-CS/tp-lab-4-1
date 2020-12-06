@@ -26,7 +26,7 @@ TEST(aut_test, test4) {
 	Automata d;
 	d.on();
 	d.coin(60);
-	EXPECT_EQ(ACCEPT, d.getState());
+	EXPECT_EQ(WAIT, d.getState());
 }
 
 TEST(aut_test, test5) {
