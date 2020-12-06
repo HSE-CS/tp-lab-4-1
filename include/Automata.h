@@ -52,6 +52,8 @@ class Automata {
      void cancel();
 
      void finish();
+
+     int getValue() const;
 };
 
 #endif

@@ -181,7 +181,9 @@ void Automata::getChange() {
     }
 }
 
-
+int Automata::getValue() const {
+    return value;
+}
 
 
 
