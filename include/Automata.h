@@ -1,40 +1,40 @@
-//Copyright (c) 2020 Sozinov Kirill
-
+//Copyright 2020 Sozinov Kirill
 #ifndef INCLUDE_AUTOMATA_H_
 #define INCLUDE_AUTOMATA_H_
-
 #include <string>
-#include <vector>
-#include <utility>
+#define SIZE 10
 
 enum STATES {
 	OFF,
 	WAIT,
 	ACCEPT,
 	CHECK,
-	COOK
+	COOK,
 };
 
 class Automata {
-
-private:
-	unsigned int cash;
-	/*static*/ std::vector<std::string> menu{ "black tea", "green tea", "cappuccino", "latte", "espresso", "americano", "hot chocolate" };
-	/*static*/ std::vector<unsigned int> prices{ 10, 15, 40, 40, 40, 45, 35 };
-	STATES state;
 public:
 	Automata();
 	void on();
 	void off();
-	void coin(unsigned int money);
-	std::pair< std::vector <std::string>, std::vector <unsigned int> > getMenu();
+	bool coin(int chash);
+	std::string getMenu();
 	STATES getState();
-	void choice(unsigned int drink);
-	bool check(unsigned int drink);
+	void choice(int num);
+	void check(int num);
 	void cancel();
 	void cook();
 	void finish();
+
+private:
+	int cash;
+	std::string arr_menu[SIZE] = { "Espresso","Cappuccino",
+		"Ristretto","Lungo",
+		"Latte","Latte macchiato",
+		"Tea","Green tea",
+		"Cold tea","Water" };
+	int arr_prices[SIZE] = { 40, 40, 60, 55, 45,
+		55, 25, 30, 20, 20 };
+	STATES state;
 };
-
 #endif // INCLUDE_AUTOMATA_H_
-

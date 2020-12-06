@@ -1,76 +1,77 @@
-//Copyright (c) 2020 Sozinov Kirill
-
+//Copyright 2020 Sozinov Kirill
+#include <iostream>
 #include "Automata.h"
-#include <string>
-#include <utility>
-#include <vector>
 
 Automata::Automata() {
+	state = STATES::OFF;
 	cash = 0;
-	this->menu = menu;
-	this->prices = prices;
-	state = OFF;
 }
 
 void Automata::on() {
-	if (state == OFF) {
-		state = WAIT;
-	}
+	if (state == STATES::OFF)
+		state = STATES::WAIT;
 }
 
 void Automata::off() {
-	if (state == WAIT) {
-		state = OFF;
+	if (state == STATES::WAIT)
+		state = STATES::OFF;
+}
+
+bool Automata::coin(int cash) {
+	if ((state == STATES::WAIT) && (state == STATES::ACCEPT)) {
+		state = STATES::ACCEPT;
+		cash += cash;
+		return true;
 	}
+	return false;
 }
 
-void Automata::coin(unsigned int money) {
-	if (state == WAIT || state == ACCEPT) {
-		if (state == WAIT) {
-			state = ACCEPT;
-		}
-		cash += money;
+std::string  Automata::getMenu() {
+	if (state == STATES::OFF) {
+		std::string menu{ "" };
+		return menu;
 	}
+	std::string menu = "";
+	for (int i = 0; i < SIZE; i++) {
+		menu += std::to_string(i + 1) + " " + arr_menu[i] + " " + std::to_string(arr_prices[i]) + "\n";
+	}
+	return menu;
 }
 
-std::pair< std::vector <std::string>, std::vector <unsigned int> > Automata::getMenu() {
-	return std::make_pair(this->menu, this->prices);
-}
-
-
-STATES Automata::getState()  {
+STATES Automata::getState() {
 	return state;
 }
 
-bool Automata::check(unsigned int drink_index) {
-	return this->cash > prices[drink_index];
-}
-
-void Automata::choice(unsigned int drink_index) {
+void Automata::choice(int num) {
 	if (state == ACCEPT) {
 		state = CHECK;
-		if (check(drink_index)) {
-			cash -= prices[drink_index];
-			cook();
-		}
-		else
-			cancel();
+		check(num - 1);
 	}
 }
 
-void Automata::cancel() {
+void Automata::check(int number)
+{
+	if (state == CHECK)
+		if (cash >= arr_prices[number - 1])
+			cook();
+	return;
+}
+
+void Automata::cancel()
+{
+	if (state == OFF)
+		return;
 	state = WAIT;
 	cash = 0;
 }
 
-void Automata::cook() {
-	if (state == CHECK) {
-		state = COOK;
-		finish();
-	}
+void Automata::cook()
+{
+	state = COOK;
+	finish();
 }
 
-void Automata::finish() {
-	if (state == COOK)
-		state = WAIT;
+void Automata::finish()
+{
+	state = WAIT;
 }
