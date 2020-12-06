@@ -6,13 +6,13 @@
 
 TEST(Constructor, test1) {
 Automata test;
-EXPECT_EQ(test.getState(), std::to_string(OFF));
+EXPECT_EQ(test.getState(), std::to_string("OFF"));
 }
 
 TEST(STATES, test1) {
 Automata test;
 test.on();
-EXPECT_EQ(test.getState(), std::to_string(WAIT));
+EXPECT_EQ(test.getState(), "WAIT");
 }
 
 TEST(STATES, test2) {
@@ -27,23 +27,6 @@ Automata test;
 test.on();
 test.coin(500);
 EXPECT_EQ(test.getCash(), 500);
-}
-
-TEST(coin, test2) {
-Automata test;
-test.on();
-test.coin(25);
-test.coin(4);
-EXPECT_EQ(test.getCash(), 29);
-}
-
-TEST(coin, test3) {
-Automata test;
-test.on();
-test.coin(146587);
-test.coin(33);
-test.coin(90);
-EXPECT_EQ(test.getCash(), 146710);
 }
 
 TEST(cook, test1) {
