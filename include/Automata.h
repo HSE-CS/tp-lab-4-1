@@ -30,7 +30,7 @@ public:
   void off();
   void coin(int c);
   void getMenu();
-  void getState();
+  STATES getState();
   void choice(unsigned int ch);
   bool check();
   void cancel();
@@ -38,4 +38,5 @@ public:
   void finish();
   int get_cash();
   unsigned int get_ch();
+
 };
