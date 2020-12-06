@@ -24,14 +24,14 @@ TEST(automata, test4)
 	Automata a;
 	a.on();
 	a.coin(30);
-	EXPECT_FALSE(false, a.check(40));
+	EXPECT_FALSE(a.check(40));
 }
 TEST(automata, test5)
 {
 	Automata a;
 	a.on();
 	a.coin(30);
-	EXPECT_TRUE(true, a.check(25));
+	EXPECT_TRUE(a.check(25));
 }
 TEST(automata, test6)
 {
