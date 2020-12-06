@@ -155,7 +155,7 @@ TEST(AutomataTest, test_getMenu2) {
     Automata automata(&(std::cout), "1234", menu);
     automata.on();
     automata.getMenu((std::string)"1234").changeItem("Cola", 10);
-    EXPECT_EQ(0, (automata.getMenu(false) == menu);
+    EXPECT_EQ(0, (automata.getMenu(false) == menu));
 }
 
 TEST(AutomataTest, test_state1) {
