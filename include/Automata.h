@@ -1,4 +1,6 @@
+//Copyright 2020 Pasmanik Irina
 #pragma once
+#include <iostream>
 #ifndef	AUTOMATA_H
 #define	AUTOMATA_H
 
@@ -15,18 +17,18 @@ enum States {
 class Automata {
 private:
 	int cash;
-	std::string menu[SIZE];
-	char prices[SIZE];
+	std::string menu[SIZE] = {"Espresso", "Americano", "Latte", "Black Tea", "Green Tea"};
+	char prices[SIZE] = { 40, 45, 60, 30, 30 };
 	States state;
 public:
 	Automata();
 	void on();
 	void off();
-	void coin();
+	void coin(int coin);
 	std::string getMenu();
 	States getState();
-	void choice();
-	void check();
+	void choice(int pos);
+	void check(int pos);
 	void cancel();
 	void cook();
 	void finish();
