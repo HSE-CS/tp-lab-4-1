@@ -1,0 +1,8 @@
+Espresso:40
+Double Espresso:70
+Macchiato:70
+Americano:80
+Latte:80
+Cappuccino:90
+Flat White:100
+Irish Coffee:100
