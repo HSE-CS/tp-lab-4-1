@@ -50,7 +50,11 @@ install(TARGETS Menu
     ARCHIVE DESTINATION "${lib_dest}"
     COMPONENT library)
 
-install(TARGETS ${PROJECT_NAME}.info
+install(TARGETS Automata.info
+		RUNTIME DESTINATION "${tool_dest}"
+    COMPONENT library)
+    
+install(TARGETS Menu.info
 		RUNTIME DESTINATION "${tool_dest}"
     COMPONENT library)
 install(FILES ${header} DESTINATION "${include_dest}")
