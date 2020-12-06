@@ -7,34 +7,6 @@ using namespace std;
 
 #define uint unsigned int
 
-#ifdef _WIN32 || _WIN64
-
-#include <windows.h>
-
-void clearconsole()
-{
-	char fill = ' ';
-	COORD tl = { 0,0 };
-	CONSOLE_SCREEN_BUFFER_INFO s;
-	HANDLE console = GetStdHandle(STD_OUTPUT_HANDLE);
-	GetConsoleScreenBufferInfo(console, &s);
-	DWORD written, cells = s.dwSize.X * s.dwSize.Y;
-	FillConsoleOutputCharacter(console, fill, cells, tl, &written);
-	FillConsoleOutputAttribute(console, s.wAttributes, cells, tl, &written);
-	SetConsoleCursorPosition(console, tl);
-}
-
-#else
-
-#include <unistd.h>
-
-void clearconsole()
-{
-	write(1, "\E[H\E[2J", 7);
-}
-
-#endif
-
 Automata::Automata(std::string datafile)
 {
 	this->cash = 0;
