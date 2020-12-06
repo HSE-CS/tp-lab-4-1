@@ -26,5 +26,46 @@ TEST(automata, test3) {
     Automata test;
     test.on();
     test.coin(100);
-    EXPECT_EQ(ACCEPt, test.getState());
+    EXPECT_EQ(ACCEPT, test.getState());
+}
+TEST(automata, test4) {
+    Automata test;
+    test.on();
+    test.coin(35);
+    test.choice("Milk");
+    test.check();
+    EXPECT_EQ(CHECK, coffee_machine.getState());
+}
+TEST(automata, test5) {
+    Automata test;
+    test.on();
+    test.coin(20);
+    test.choice("Lemon tea");
+    test.check();
+    test.cook();
+    EXPECT_EQ(COOK, test.getState());
+}
+TEST(automata, test6) {
+    Automata test;
+    test.on();
+    test.coin(100);
+    test.cancel();
+    EXPECT_EQ(WAIT, test.getState());
+}
+TEST(automata, test7) {
+    Automata test;
+    test.on();
+    test.coin(100);
+    test.choice("juice");
+    test.check();
+    EXPECT_EQ(ACCEPT, test.getState());
+}
+TEST(automata, test8) {
+    Automata test;
+    test.on();
+    test.coin(70);
+    test.choice("Water");
+    test.check();
+    test.cook();
+    EXPECT_EQ(COOK, test.getState());
 }
