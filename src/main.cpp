@@ -16,4 +16,4 @@ int main()
     atom.off();
     cout<<atom.getState()<<endl;
     return 0;
-}//
+}

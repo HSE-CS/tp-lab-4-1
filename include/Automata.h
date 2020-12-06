@@ -23,4 +23,4 @@ public:
     void cancel();
     void cook();
     void finish();
-};//
+};
