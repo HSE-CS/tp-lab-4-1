@@ -13,7 +13,7 @@ target_link_libraries(${PROJECT_NAME}
   pthread)
 
   
-add_executable(${PROJECT_NAME}.info main.cpp)
+add_executable(${PROJECT_NAME}.info mainNoDialog.cpp)
 target_include_directories(${PROJECT_NAME}.info
   PUBLIC ${CMAKE_CURRENT_BINARY_DIR}
          ${${PROJECT_NAME}_SOURCE_DIR}/include)
