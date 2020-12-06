@@ -50,7 +50,7 @@ TEST (Automata, testCoin2) {
 
 TEST (Automata, testMenu1) {
     Automata c;
-    EXPECT_EQ(std::vector<std::string>(), c.getMenu());
+    EXPECT_STREQ(std::vector<std::string>(), c.getMenu());
 }
 
 TEST (Automata, testMenu2) {
@@ -64,25 +64,28 @@ TEST (Automata, testMenu2) {
         "Cocoa",
         "Hot milk",
     };
-    EXPECT_EQ(menu, c.getMenu());
+    c.coin(10.0);
+    c.choise(menu.at(0));
+    EXPECT_EQ("wait", c.getState());
+    EXPECT_EQ(0.0, c.getReminder());
 }
 
 
-TEST (Automata, testPrices1) {
+TEST (Automata, testMenu3) {
     Automata c;
-    std::map<std::string, double> prices{
-        std::make_pair("Tea", 10.0),
-        std::make_pair("Cappuccino", 30.0),
-        std::make_pair("Americano", 35.0),
-        std::make_pair("Latte", 20.0),
-        std::make_pair("Cocoa", 10.0),
-        std::make_pair("Hot milk", 45.0)
+    std::vector<std::string> menu{
+        "Tea",
+        "Cappuccino",
+        "Americano",
+        "Latte",
+        "Cocoa",
+        "Hot milk",
     };
     c.on();
     c.coin(2.0);
-    c.choice("tea");
+    c.choice(menu.at(3));
     EXPECT_EQ("wait", c.getState());
-    EXPECT_EQ(prices, c.getPriece());
+    EXPECT_EQ(2.0, c.getReminder());
 }
 
 TEST (Automata, testCancel1) {
