@@ -95,7 +95,6 @@ void Automata::cook()
 		this->state = COOK;
 		std::cout << "W8 a minute, your drink is cooking" << std::endl;
 		//Sleep(2000);
-		this->finish();
 	}
 }
 
