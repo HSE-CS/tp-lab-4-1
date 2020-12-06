@@ -23,6 +23,13 @@ Automata::Automata(std::string datafile)
 		this->prices.push_back(price);
 	}
 	fdata.close();
+	if (this->prices.size() < 1)
+	{
+		this->menu.push_back("Espresso");
+		this->prices.push_back(50);
+		this->menu.push_back("Capuccino");
+		this->prices.push_back(100);
+	}
 }
 
 void Automata::on()
