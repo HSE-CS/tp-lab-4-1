@@ -317,5 +317,5 @@ TEST(lab4, test18)
 	int returned = newAutomata.cancel();
 	newAutomata.off();
 
-	EXPECT_EQ(30, state);
+	EXPECT_EQ(30, returned);
 }
