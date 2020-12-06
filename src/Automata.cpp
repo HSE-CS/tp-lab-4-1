@@ -99,3 +99,15 @@ void Automata::finish() {
         this->customerChoice = -1;
     }
 }
+
+int Automata::getCondition() {
+    return this->state;
+}
+
+int Automata::getMoneyAmount() {
+    return this->cash;
+}
+
+int Automata::getChoice() {
+    return this->customerChoice;
+}
