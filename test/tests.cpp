@@ -1,6 +1,4 @@
 //Copyright (c) 2020 Sozinov Kirill
-#include "gtest.h"
-#include "Automata.h"
 
 #include "gtest/gtest.h"
 #include "Automata.h"
