@@ -252,7 +252,7 @@ TEST(AutomataTest, test_state10) {
     automata.choice("Cola");
     automata.cook();
     EXPECT_EQ(0, automata.getChange());
-    automata.off()
+    automata.off();
     EXPECT_EQ(0, automata.getState());
 }
 

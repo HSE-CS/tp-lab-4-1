@@ -28,7 +28,7 @@ public:
         }
     }
 
-    Menu(int size, char** items, double* prices) {
+    Menu(int size, const char** items, double* prices) {
         for (int i = 0; i < size; i++) {
             addItem(items[i], prices[i]);
         }
