@@ -1,6 +1,14 @@
 #include <gtest/gtest.h>
 #include "Automata.h"
 
+enum STATES {
+    OFF,
+    WAIT,
+    ACCEPT,
+    CHECK,
+    COOK,
+};
+
 TEST(automata_test, test1){
     Automata bar;
     bar.on();
