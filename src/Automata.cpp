@@ -17,7 +17,7 @@ void Automata::off() { state = OFF; }
 
 void Automata::coin(unsigned int coin) {
   if (state == WAIT || state == ACCEPT) {
-    state == ACCEPT;
+    state = ACCEPT;
     cash += coin;
   }
 }
