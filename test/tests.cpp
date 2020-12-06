@@ -11,8 +11,20 @@ const std::map<std::string, int> MENU = {
 };
 
 
-TEST(automata, off1) {
-    Automata coffee_machine;
-    EXPECT_EQ(ON, coffee_machine.getState());
+TEST(automata, test1) {
+    Automata test;
+    EXPECT_EQ(OFF, test.getState());
 }
 
+TEST(automata, test2) {
+    Automata test;
+    test.on();
+    EXPECT_EQ(WAIT, a.getState());
+}
+
+TEST(automata, test3) {
+    Automata test;
+    test.on();
+    test.coin(100);
+    EXPECT_EQ(ACCEPt, test.getState());
+}
