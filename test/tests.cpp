@@ -62,7 +62,7 @@ Automata automata;
 automata.on();
 automata.coin(80);
 automata.choice("Premium Americano");
-automata.coin(10);
+automata.coin(20);
 automata.choice("Water");
 EXPECT_EQ(90, automata.getValue());
 }
@@ -72,7 +72,7 @@ Automata automata;
 automata.on();
 automata.coin(80);
 automata.choice("Latte");
-automata.coin(10);
+automata.coin(20);
 automata.cancel();
 automata.off();
 automata.choice("Water");
