@@ -51,7 +51,7 @@ TEST(automata, test8) {
   Automata a;
   a.on();
   a.coin(10.2);
-  a.cacel();
+  a.cancel();
   EXPECT_EQ(WAIT, a.getState());
 }
 
