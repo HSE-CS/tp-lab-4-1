@@ -54,8 +54,8 @@ TEST(automata, test8)
 	Automata a;
 	a.on();
 	a.coin(30);
-	a.cancel()
-		EXPECT_EQ(States::WAIT, a.getState());
+	a.cancel();
+	EXPECT_EQ(States::WAIT, a.getState());
 }
 TEST(automata, test9)
 {
