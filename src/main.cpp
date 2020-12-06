@@ -1,3 +1,4 @@
+// Copyright 2020 test
 #include <iostream>
 #include "Automata.h"
 
