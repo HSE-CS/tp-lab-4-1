@@ -27,11 +27,19 @@ TEST (Automata, testOff1) {
     c.coin(5.0);
     c.off();
     EXPECT_EQ("accept", c.getState());
-    c.cancel();
     EXPECT_EQ(5.0, c.getReminder());
+}
+
+TEST (Automata, testOff1) {
+    Automata c;
+    c.on();
+    c.coin(5.0);
+    c.cancel();
     c.off();
     EXPECT_EQ("off", c.getState());
+    EXPECT_EQ(0.0, c.getReminder());
 }
+
 
 TEST (Automata, testCoin1) {
     Automata c;
@@ -46,6 +54,11 @@ TEST (Automata, testCoin2) {
     c.coin(50.0);
     c.coin(45.0);
     EXPECT_EQ(95.0, c.getReminder());
+}
+
+TEST (Automata, testMenu) {
+    Automata c;
+    EXPECT_EQ(std::vector<std::string>(), c.getMenu());
 }
 
 TEST (Automata, testMenu1) {
@@ -64,7 +77,6 @@ TEST (Automata, testMenu1) {
     EXPECT_EQ("wait", c.getState());
     EXPECT_EQ(0.0, c.getReminder());
 }
-
 
 TEST (Automata, testMenu2) {
     Automata c;
@@ -106,9 +118,6 @@ TEST (Automata, testAll1) {
     c.choice(_menu.at(0));
     EXPECT_EQ("wait", c.getState());
     EXPECT_EQ(40.0, c.getReminder());
-    c.off();
-    EXPECT_EQ("off", c.getReminder());
-    EXPECT_EQ(0.0, c.getReminder());
 }
 
 TEST (Automata, testAll2) {
@@ -117,12 +126,8 @@ TEST (Automata, testAll2) {
     c.coin(5.0);
     std::vector<std::string> _menu = c.getMenu();
     c.choice(_menu.at(2));
-    EXPECT_EQ("wait", c.getState());
-    EXPECT_EQ(5.0, c.getReminder());
     c.coin(80);
     c.choice(_menu.at(5));
     EXPECT_EQ("wait", c.getState());
     EXPECT_EQ(40.0, c.getReminder());
-    c.off();
-    EXPECT_EQ("off", c.getReminder());
 }
