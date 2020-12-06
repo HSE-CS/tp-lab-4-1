@@ -41,7 +41,7 @@ TEST(Automata, test6) {
     a.on();
     a.coin(50);
     a.cancel();
-    STATES expected = ACCEPT;
+    STATES expected = WAIT;
     EXPECT_EQ(expected, a.getState());
 }
 
