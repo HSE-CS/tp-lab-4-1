@@ -87,9 +87,4 @@ TEST(Automata_FINISH, Test2) {
 	a.cook();
 	ASSERT_EQ(50, a.finish());
 }
-int main(int argc, char *argv[])
-{
 
-	::testing::InitGoogleTest(&argc, argv);
-	return RUN_ALL_TESTS();
-}
