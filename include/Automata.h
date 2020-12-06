@@ -3,8 +3,10 @@
 #define AUTOMATA_H
 #include <iostream>
 #include <string>
-#include 
-
+#include <windows.h>
+#include <stdlib.h>
+#include <vector>
+#define COUNT_OF_FOODS 4
 
 enum States
 {
@@ -18,8 +20,8 @@ enum States
 class Automata {
 private:
 	int cash;
-	const char** menu;
-	const int* prices;
+	std::string menu[COUNT_OF_FOODS] = { "espresso", "latte", "capucino", "raf" };
+	int prices[COUNT_OF_FOODS] = { 20, 30, 30, 40 };
 	States state;
 public:
 	Automata();
@@ -27,7 +29,7 @@ public:
 	void off();
 	void coin(int);
 	std::string getMenu();
-	char* getState();
+	States getState();
 	void choice(int);
 	bool check(int);
 	void cancel(int);

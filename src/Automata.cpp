@@ -3,10 +3,10 @@
 Automata::Automata()
 {
 	this->cash = 0;
-	const char * menu[] = { "espresso", "latte", "capucino", "raf" };
-	this->menu = menu;
-	const int prices[] = { 20, 30, 30, 40 };
-	this->prices = prices;
+	//const char * menu[] = { "espresso", "latte", "capucino", "raf" };
+	//this->menu = menu;
+	//const int prices[] = { 20, 30, 30, 40 };
+	//this->prices = prices;
 	this->state = OFF;
 }
 
@@ -35,42 +35,18 @@ void Automata::coin(int value)
 
 std::string Automata::getMenu()
 {
-	std::string result;
+	std::string result = "";
 	int length = 0;
-	for (size_t i = 0; i < sizeof(this->prices)/sizeof(this->prices[0]); i++)
+	for (size_t i = 0; i < COUNT_OF_FOODS; i++)
 	{
-		result.append(this->menu[i]);
-		result.append(":");
-		char word[2]{ 0 };
-		result.append(itoa(this->prices[i], word, 10));
-		result.append("\n");
+		result += this->menu[i] + ":" + std::to_string(this->prices[i]) + "\n";
 	}
 	return result;
 }
 
-char* Automata::getState()
+States Automata::getState()
 {
-	switch (this->state)
-	{
-	case OFF:
-		char result[4] = "OFF";
-		return result;
-	case WAIT:
-		char result[5] = "WAIT";
-		return result;
-	case ACCEPT:
-		char result[7] = "ACCEPT";
-		return result;
-	case CHECK:
-		char result[6] = "CHECK";
-		return result;
-	case COOK:
-		char result[5] = "COOK";
-		return result;
-	default:
-		char result[6] = "ERROR";
-		return result;
-	}
+	return this->state;
 }
 
 void Automata::choice(int value)
@@ -118,7 +94,7 @@ void Automata::cook()
 	if (this->state == CHECK) {
 		this->state = COOK;
 		std::cout << "W8 a minute, your drink is cooking" << std::endl;
-		_sleep(2000);
+		Sleep(2000);
 		this->finish();
 	}
 }
