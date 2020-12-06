@@ -28,7 +28,8 @@ TEST(Automata, test_choice) {
 	automata.on();
 	automata.coin(50);
 	automata.choice(1);
-	EXPECT_EQ(COOK, automata.getState());
+	automata.cook();
+	EXPECT_EQ(5, automata.getState());
 }
 
 TEST(Automata, test_finish) {
