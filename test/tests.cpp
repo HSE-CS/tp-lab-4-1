@@ -26,6 +26,7 @@ TEST(AutomataTest, test4) {
     test.coin(10);
     test.choice(1);
     EXPECT_EQ(test.getState(), "State: CHECK");
+}
 
 TEST(AutomataTest, test5) {
     Automata test;
