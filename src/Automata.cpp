@@ -1,10 +1,4 @@
-//
-//  Automata.cpp
-//  laba
-//
-//  Created by Anastasiya Rogozyan on 06.12.2020.
-
-
+// Copyright 2020 Anastasiya Rogozyan
 
 #include <iostream>
 #include "../include/Automata.h"

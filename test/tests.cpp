@@ -1,9 +1,4 @@
-//
-//  tests.cpp
-//  laba
-//
-//  Created by Anastasiya Rogozyan on 06.12.2020.
-
+// Copyright 2020 Anastasiya Rogozyan
 
 TEST(AutomataTest, test1) {
     Automata test;
