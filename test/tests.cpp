@@ -3,15 +3,15 @@
 
 TEST(automata, test1){
   Automata automata;
-  automata.on()
-  EXPECT_EQ(1, automata.getState();
+  automata.on();
+  EXPECT_EQ(1, automata.getState());
 }
 
 TEST(automata, test2){
 Automata automata;
 automata.on();
 automata.off();
-EXPECT_EQ(0, automata.getState();
+EXPECT_EQ(0, automata.getState());
 }
 
 TEST(automata, test3){
@@ -19,7 +19,7 @@ Automata automata;
 automata.on();
 automata.coin(4);
 automata.choice(4);
-EXPECT_EQ(2, automata.getState();
+EXPECT_EQ(2, automata.getState());
 }
 
 TEST(automata, test4){
