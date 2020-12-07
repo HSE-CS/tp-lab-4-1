@@ -6,6 +6,7 @@
 
 
 #include <gtest/gtest.h>
+#include "../include/Automata.h"
 
 TEST(AutomataTest, test1) {
     Automata test;
