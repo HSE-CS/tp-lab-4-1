@@ -1,4 +1,3 @@
-/*
 #include "gtest/gtest.h"
 #include "Automata.h"
 
@@ -55,4 +54,3 @@ TEST(AutomataTest, test8) {
     test.finish();
     EXPECT_EQ(test.getState().str(), State: OFF);
 }
-*/
