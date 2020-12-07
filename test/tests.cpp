@@ -18,7 +18,7 @@ TEST(Automata, coin) {
     Automata automata;
     automata.on();
     automata.coin(10);
-    EXPECT_EQ(automata.getCash(), 10)
+    EXPECT_EQ(automata.getCash(), 10);
 }
 
 TEST(Automata, cancel) {
