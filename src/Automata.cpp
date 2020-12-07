@@ -1,7 +1,8 @@
 #include <iostream>
 #include <vector>
 #include <string>
-#include "../include/task.h"
+
+#include "../include/Automata.h"
 
 Automata::Automata(std::vector <std::string> menu, std::vector <int> prices){
 	this->menu = menu;

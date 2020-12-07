@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include "../include/task.h"
+#include "../include/Automata.h"
 using namespace std;
 
 
