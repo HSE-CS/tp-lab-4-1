@@ -5,10 +5,23 @@ Automata::Automata() {
  menu = { "hot water", "green tea", "black tea", "americano", "cappuccino",
         "cocoa",     "latte",     "espresso",  "frappe" };
  price = { 10, 15, 15, 20, 25, 30, 30, 15, 35 };
- state = states::OFF;
+ state = OFF;
  user = 0;
  change = 0;
 }
+
+Automata::Automata(const std::string menu_file) {
+ cash = 0;
+ std::ifstream menu_f(menu_file);
+ std::string line;
+ while (getline(menu_f, line)) {
+  std::string drink = line.substr(0, line.find("-"));
+  int pr = stoi(line.substr(line.find("-") + 1, line.size() - drink.size() - 1));
+  menu.push_back(drink);
+  price.push_back(pr);
+ }
+ menu_f.close();
+};
 
 void Automata::on() {
  state = ON;

@@ -33,5 +33,8 @@ int main() {
 
 	coffee_aut.off();
  
+	//Automata aut("menu_file.txt");
+	//std::cout << aut.getMenu();
+
 	return 0;
 };

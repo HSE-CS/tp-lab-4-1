@@ -4,6 +4,7 @@
 #include <string>
 #include <vector>
 #include <iostream>
+#include <fstream>
 
 enum states {
 	OFF,
@@ -24,6 +25,7 @@ private:
  int change; //сдача
 public:
  Automata(); //конструктор
+ Automata(const std::string); //конструктор с меню из файла
  void on(); //включение автомата;
  void off(); //выключение автомата;
  void coin(int); //занесение денег на счёт пользователем;
