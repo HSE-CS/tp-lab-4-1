@@ -1,0 +1,4 @@
+milk 20
+cocoa 60
+latte 40
+cappucino 35
