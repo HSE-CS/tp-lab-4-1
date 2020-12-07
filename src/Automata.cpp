@@ -5,6 +5,7 @@
 //  Created by Anastasiya Rogozyan on 06.12.2020.
 
 
+
 #include <iostream>
 #include "../include/Automata.h"
 
@@ -38,7 +39,6 @@ int Automata::getState() {
 
 bool Automata::choice(int position) {
     if (state == ACCEPT) {
-        // int arrayLength = ;
         if (position > 0
             && position < static_cast<int>(sizeof(menu)/sizeof(*menu))) {
             state = CHECK;
@@ -52,8 +52,10 @@ bool Automata::choice(int position) {
 
 bool Automata::check() {
     if (state == CHECK) {
-        if (cash < prices[chosenPosition])
+        if (cash < prices[chosenPosition]) {
+            state = WAIT;
             return false;
+        }
         return true;
     }
     return false;
@@ -82,4 +84,3 @@ bool Automata::finish() {
     }
     return false;
 }
-///

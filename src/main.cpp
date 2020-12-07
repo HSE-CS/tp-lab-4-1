@@ -5,6 +5,7 @@
 //  Created by Anastasiya Rogozyan on 06.12.2020.
 
 
+
 #include <unistd.h>
 #include <iostream>
 #include "../include/Automata.h"
@@ -22,4 +23,4 @@ int main() {
     }
     std::cout << a.getState() << std::endl;
     return 0;
-}
+
