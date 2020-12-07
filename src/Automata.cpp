@@ -132,3 +132,27 @@ bool Automata::check() {
 	 cash = 0;
 	 return stream;
  }
+
+ string Automata::sgetState() {
+	 string stream;
+	 stream = "State: ";
+	 switch (state)
+	 {
+	 case STATES::OFF:
+		 stream += "OFF";
+		 break;
+	 case STATES::WAIT:
+		 stream += "WAIT";
+		 break;
+	 case STATES::ACCEPT:
+		 stream += "ACCEPT";
+		 break;
+	 case STATES::CHECK:
+		 stream += "CHECK";
+		 break;
+	 case STATES::COOK:
+		 stream += "COOK";
+		 break;
+	 }
+	 return stream;
+ }

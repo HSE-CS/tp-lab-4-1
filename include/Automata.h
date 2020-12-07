@@ -31,6 +31,7 @@ public:
 	stringstream on(); //включение автомата
 	stringstream off(); //выключение автомата
 	stringstream getState(); //считывание текущего состо€ни€ дл€ пользовател€
+	string sgetState(); //считывание текущего состо€ни€ дл€ теста
 	void read_menu(const string dir);
 	//ƒл€ пользовател€
 	stringstream coin(unsigned int get_money); //занесение денег на счЄт пользователем
