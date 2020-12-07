@@ -54,4 +54,4 @@ class Automata {
     bool finish();
 };
 
-#endif 
+#endif // INCLUDE_AUTOMATA_H_

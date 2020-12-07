@@ -5,10 +5,6 @@
 //  Created by Anastasiya Rogozyan on 06.12.2020.
 
 
-#include <gtest/gtest.h>
-#include "Automata.h"
-#include "../include/Automata.h"
-
 TEST(AutomataTest, test1) {
     Automata test;
     EXPECT_EQ(test.getState(), OFF);
