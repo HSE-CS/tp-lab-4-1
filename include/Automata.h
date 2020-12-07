@@ -5,20 +5,23 @@
 //  Created by Anastasiya Rogozyan on 06.12.2020.
 
 
+
 #ifndef INCLUDE_AUTOMATA_H_
 #define INCLUDE_AUTOMATA_H_
 
 #include <string>
 
-class Automata {
- private:
-    enum STATES {
+enum STATES {
         OFF,
         WAIT,
         ACCEPT,
         CHECK,
         COOK
     };
+
+class Automata {
+ private:
+
     double cash;
     std::string menu[3] = {
         "Mario",
@@ -51,4 +54,4 @@ class Automata {
     bool finish();
 };
 
-#endif
+#endif 
