@@ -3,7 +3,7 @@
 stringstream Automata::on() {
 	if (state == STATES::OFF) {
 		state = STATES::WAIT;
-		read_menu("menu.txt");
+		read_menu("src/menu.txt");
 		printMenu(getMenu());
 	}
 	return getState();
