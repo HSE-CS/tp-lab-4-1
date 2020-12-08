@@ -4,7 +4,7 @@
 TEST(on, expect_no_error)
 {
 Automata automat;
-EXPECT_TRUE(automat.on());
+EXPECT_FALSE(automat.on());
 }
 
 TEST(off, expect_no_error)

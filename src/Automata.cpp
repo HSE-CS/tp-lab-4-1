@@ -17,15 +17,17 @@ std::vector<ITEM> Automata::menu = {
     {"Latte", 70}
 };
 
-bool Automata::is_in_states(STATES* states){
-    for(int i = 0; i < STATES::len; i++){
+template<typename T, int SIZE>
+bool Automata::is_in_states(T (&states)[SIZE]){
+    for(int i = 0; i < SIZE; i++){
         if (this->state == states[i])
             return true;
     }
     return false;
 }
 
-bool Automata::check_and_change(STATES * check_states, STATES new_state){
+template<typename T, int SIZE>
+bool Automata::check_and_change(T (&check_states)[SIZE], STATES new_state){
     if (is_in_states(check_states)) {
         this->state = new_state;
         return EXIT_SUCCESS;

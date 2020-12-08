@@ -25,8 +25,11 @@ private:
 
     static std::vector<ITEM> menu;
 
-    bool is_in_states(STATES *states);
-    bool check_and_change(STATES *check_states, STATES new_state);
+    template<typename T, int SIZE>
+    bool is_in_states(T (&states)[SIZE]);
+
+    template<typename T, int SIZE>
+    bool check_and_change(T (&check_states)[SIZE], STATES new_state);
 
 public:
     bool on();
