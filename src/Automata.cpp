@@ -60,3 +60,7 @@ void Automata::finish(int beverage) {
     cash = 0;
     state = WAIT;
 }
+
+double Automata::getCash(){
+    return cash;
+}
