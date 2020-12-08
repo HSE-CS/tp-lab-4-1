@@ -1,5 +1,5 @@
 #include <iostream>
-#include "automata.h"
+#include "Automata.h"
 
 int main() {
     Automata automat;

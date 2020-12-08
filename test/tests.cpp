@@ -1,5 +1,5 @@
 #include "gtest/gtest.h"
-#include "automata.h"
+#include "Automata.h"
 
 TEST(on, expect_no_error)
 {
