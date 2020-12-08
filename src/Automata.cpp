@@ -10,9 +10,11 @@ std::string Automata::getMenu() {
 }
 
 void Automata::coin(double amount) {
-    state = STATES::ACCEPT;
-    cash += amount;
-    std::cout << "Coins accepted" << std::endl;
+    if (state == ACCEPT || state == WAIT) {
+        state = STATES::ACCEPT;
+        cash += amount;
+        std::cout << "Coins accepted" << std::endl;
+    }
 }
 
 void Automata::off() {
@@ -30,8 +32,10 @@ STATES Automata::getState() {
 }
 
 void Automata::choice(int beverage) {
-    state = CHECK;
-    check(beverage);
+    if (state == ACCEPT) {
+        state = CHECK;
+        check(beverage);
+    }
 }
 
 void Automata::check(int number) {
@@ -44,9 +48,11 @@ void Automata::check(int number) {
 }
 
 void Automata::cancel() {
-    state = WAIT;
-    cash = 0;
-    std::cout << "Canceled" << std::endl;
+    if (state == ACCEPT || state == CHECK) {
+        state = WAIT;
+        cash = 0;
+        std::cout << "Canceled" << std::endl;
+    }
 }
 
 void Automata::cook(int beverage) {
@@ -56,11 +62,13 @@ void Automata::cook(int beverage) {
 }
 
 void Automata::finish(int beverage) {
-    std::cout << "Get rest of money: " << cash - prices[beverage] << std::endl;
-    cash = 0;
-    state = WAIT;
+    if (state == COOK) {
+        std::cout << "Get rest of money: " << cash - prices[beverage] << std::endl;
+        cash = 0;
+        state = WAIT;
+    }
 }
 
-double Automata::getCash(){
+double Automata::getCash() const{
     return cash;
 }

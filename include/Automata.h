@@ -27,7 +27,7 @@ public:
     void cancel();
     void cook(int);
     void finish(int);
-    double getCash();
+    double getCash() const;
 };
 
 
