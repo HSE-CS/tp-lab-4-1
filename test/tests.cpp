@@ -55,7 +55,7 @@ EXPECT_EQ(a.getState(), WAIT);
 TEST(automata, test8) {
 Automata a;
 a.cancel();
-EXPECT_EQ(a.getState(), "OFF");
+EXPECT_EQ(a.getState(), OFF);
 }
 
 TEST(automata, test9) {
