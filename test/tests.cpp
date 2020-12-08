@@ -50,7 +50,7 @@ automat.on();
 automat.coin(10);
 automat.choice(3);
 automat.check();
-EXPECT_TRUE(automat.getState()==STATES::ACCEPT);
+EXPECT_EQ(automat.getState(), STATES::ACCEPT);
 }
 
 TEST(check, expect_no_error)
@@ -60,8 +60,8 @@ automat.on();
 automat.coin(10);
 automat.coin(10);
 automat.choice(3);
-automat.check()
-EXPECT_TRUE(automat.getState()==STATES::COOK);
+automat.check();
+EXPECT_EQ(automat.getState(), STATES::COOK);
 }
 
 TEST(cook, expect_error)
