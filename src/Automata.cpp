@@ -1,4 +1,4 @@
-#include "automata.h"
+#include "Automata.h"
 
 Automata::Automata() {
     this->state=STATES::OFF;
