@@ -63,7 +63,11 @@ bool Automata::coin(double money){
 }
 
 bool Automata::choice(int num){
-    this->user_choice = num-1;
+    if (this->menu.size() >= num &&
+        num >= 0)
+        this->user_choice = num-1;
+    else
+        return EXIT_FAILURE;
 
     STATES old_states[] = {STATES::ACCEPT};
     return Automata::check_and_change(
@@ -86,7 +90,7 @@ bool Automata::cancel(){
 bool Automata::check(){
     STATES old_states[] = {STATES::CHECK};
     STATES st;
-    if (Automata::menu[this->user_choice].price < this->user_cash)
+    if (Automata::menu[this->user_choice].price <= this->user_cash)
     {
         st = STATES::COOK;
     } else{
