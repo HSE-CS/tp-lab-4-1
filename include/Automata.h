@@ -23,6 +23,7 @@ private:
     STATES state;
 public:
     Automata();
+    double getCash() const;
     void on();
     void off();
     void coin(int money);

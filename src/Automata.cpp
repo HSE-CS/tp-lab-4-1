@@ -8,6 +8,11 @@ Automata::Automata() {
     this-> menu;
     this-> prices;
 }
+
+double Automata::getCash() const {
+    return cash;
+}
+
 void Automata::on()
 {
     this->state = WAIT;
