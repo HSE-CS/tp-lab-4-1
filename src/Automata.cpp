@@ -1,82 +1,67 @@
 #include "Automata.h"
-#include <iostream>
-#include <string>
 
+using namespace std;
 
-Automata::Automata() {
-    this->cash=0;
-    this-> menu;
-    this-> prices;
-}
-
-double Automata::getCash() const {
-    return cash;
-}
-
-void Automata::on()
+AUTOMATA::AUTOMATA()
 {
-    this->state = WAIT;
+	cash = 0; state = OFF;
 }
 
-void Automata::off()
-{
-    this->state = OFF;
+void AUTOMATA::on(){
+	if (state == OFF) state = WAIT;
 }
-
-void Automata::coin(int money)
-{
-    if (state == WAIT) {
-        this->cash += money;
-        state = ACCEPT;
-    }
+void AUTOMATA::off() {
+	if (state != OFF) state = OFF;
 }
-
-std::string Automata::getMenu() {
-    std::string info = "";
-    int num = 0;
-    for (int i = 0; i <( this->menu.size()); i++) {
-
-        num = num+1;
-        info += std::to_string(num) +" "+ menu[i] + " " + std::to_string(this->prices[i]) + '\n';
-    }
-    return info;
+void AUTOMATA::coin(int money) {
+	if (state == ACCEPT || state == WAIT) { 
+		state = ACCEPT;
+		cash = cash+money; }
 }
+string AUTOMATA::getMenu() {
+	string info = "";
+	int num = 0;
+	for (int i = 0; i < (menu.size()); i++) {
 
-STATES Automata::getState()
-{
-    return this->state;
+		num = num + 1;
+		info += to_string(num) + " " + menu[i] + " " + to_string(prices[i]) + '\n';
+	}
+	return info;
 }
-
-void Automata::choice(int number)
-{
-    if (this->state != ACCEPT)
-        return;
-    this->state = CHECK;
+STATES AUTOMATA::getState() {
+	return state;
 }
-
-void Automata::check(int number)
-{
-    if (this->state == CHECK)
-        if (this->cash >= this->prices[number - 1])
-            cook();
-    return;
+void AUTOMATA::choice(int number) {
+	if (state == ACCEPT) {
+		state = CHECK;
+		check(number-1);
+	}
 }
-
-void Automata::cancel()
-{
-    if (state == ACCEPT || state == CHECK) {
-        state = WAIT;
-    }
+void AUTOMATA::check(int number) {
+	if (cash >= prices[number]) {
+		cook(number);
+		return;
+	}
+	cout << "Not enough coins" << endl;
+	state = ACCEPT;
 }
-
-void Automata::cook()
-{
-    this->state = COOK;
-    printf("Cooking...\n");
- }
-
-void Automata::finish()
-{
-    this->state = WAIT;
-    this->cash = 0;
-}  
+void AUTOMATA::cancel() {
+	if (state == ACCEPT || state == CHECK) {
+		state = WAIT;
+		cash = 0;
+		cout << "Canceled" << endl;
+	}
+}
+void AUTOMATA::cook(int number) {
+	state = COOK;
+	cout << "Cooking..." << endl;
+	finish(number);
+}
+void AUTOMATA::finish(int number) {
+	cout << "Get rest of money: " << cash - prices[number] << endl;
+	cash = 0;
+	state = WAIT;
+}
+double AUTOMATA::getCash() const {
+	return cash;
+}
