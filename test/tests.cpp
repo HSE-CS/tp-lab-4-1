@@ -1,25 +1,25 @@
 #include <gtest/gtest.h>
 #include "Automata.h"
 TEST(automata, test1) {
-	Automata a;
+	AUTOMATA a;
 	EXPECT_EQ(OFF, a.getState());
 }
 
 TEST(automata, test2) {
-	Automata a;
+	AUTOMATA a;
 	a.on();
 	EXPECT_EQ(WAIT, a.getState());
 }
 
 TEST(automata, test3) {
-	Automata a;
+	AUTOMATA a;
 	a.on();
 	a.cancel();
 	EXPECT_EQ(a.getState(), WAIT);
 }
 
 TEST(automata, test4) {
-	Automata a;
+	AUTOMATA a;
 	a.on();
 	a.coin(10.2);
 	a.cancel();
@@ -27,7 +27,7 @@ TEST(automata, test4) {
 }
 
 TEST(automata, test5) {
-	Automata a;
+	AUTOMATA a;
 	a.on();
 	a.coin(10);
 	a.cancel();
@@ -36,14 +36,14 @@ TEST(automata, test5) {
 }
 
 TEST(automata, test6) {
-	Automata a;
+	AUTOMATA a;
 	a.on();
 	a.coin(10.2);
 	EXPECT_EQ(ACCEPT, a.getState());
 }
 
 TEST(automata, test7) {
-	Automata a;
+	AUTOMATA a;
 	a.on();
 	a.coin(30);
 	a.choice(5);
@@ -51,13 +51,13 @@ TEST(automata, test7) {
 }
 
 TEST(automata, test8) {
-	Automata a;
+	AUTOMATA a;
 	a.cancel();
 	EXPECT_EQ(a.getState(), OFF);
 }
 
 TEST(automata, test9) {
-	Automata a;
+	AUTOMATA a;
 	a.on();
 	a.coin(6.1);
 	a.choice(5);
@@ -65,7 +65,7 @@ TEST(automata, test9) {
 }
 
 TEST(automata, test10) {
-	Automata a;
+	AUTOMATA a;
 	a.on();
 	a.coin(30);
 	a.cancel();
