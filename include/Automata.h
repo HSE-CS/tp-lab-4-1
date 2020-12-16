@@ -9,7 +9,7 @@
 #include <cmath>
 #include <iomanip>
 #include <cstring>
-
+#include <Windows.h>
 
 
 using namespace std;

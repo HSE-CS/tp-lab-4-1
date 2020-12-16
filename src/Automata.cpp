@@ -67,6 +67,20 @@ void Automata::check(int num) {
 }
 
 void Automata::cook() {
+    int timer=0;
+    while(true){
+        system("cls");
+        cout<<timer<<"%";
+        Sleep(57);
+        if (timer!=100){
+            timer++;
+        }
+        else{
+            system("cls");
+            cout<<"End";
+            break;
+        }
+    }
     state = COOK;
     this->finish();
 }
