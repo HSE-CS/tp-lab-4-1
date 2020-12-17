@@ -15,7 +15,7 @@ Automata automata;
 automata.on();
 automata.coin(50);
 automata.choice(2);
-EXPECT_EQ(automata.getState(), STATES::WAIT);
+EXPECT_EQ(automata.getState(), STATES::ACCEPT);
 }
 
 
@@ -35,4 +35,13 @@ automata.on();
 automata.coin(500);
 automata.choice(2);
 EXPECT_EQ(automata.getState(), STATES::WAIT);
+}
+
+TEST(getCash, expect_no_error)
+{
+    Automata automata;
+    automata.on();
+    automata.coin(100);
+    automata.coin(20);
+    EXPECT_EQ(automata.getCash(), 120);
 }
