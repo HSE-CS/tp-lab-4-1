@@ -1,19 +1,6 @@
 #include "gtest/gtest.h"
 #include "Automata.h"
 
-TEST(on, expect_no_error)
-{
-Automata automata;
-automata.on();
-EXPECT_TRUE(automata.on());
-}
-
-TEST(off, expect_no_error)
-{
-Automata automata;
-automata.on();
-EXPECT_FALSE(automata.off());
-}
 
 TEST(get_menu, expect_no_error)
 {
@@ -47,6 +34,5 @@ Automata automata;
 automata.on();
 automata.coin(500);
 automata.choice(2);
-
 EXPECT_EQ(automata.getState(), STATES::WAIT);
 }
