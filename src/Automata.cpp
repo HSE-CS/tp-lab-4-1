@@ -27,7 +27,7 @@ void Automata::coin(double coin) {
     if (state == WAIT || state == ACCEPT) {
         cash += coin;
         state = ACCEPT;
-        std::cout<<"Add "<<coin<<"\nYour cash: "<< cash << "\n";
+        //std::cout<<"Add "<<coin<<"\nYour cash: "<< cash << "\n";
 
     }
 }
@@ -51,7 +51,7 @@ void Automata::choice(int pos) {
 
 void Automata::check(int pos){
     if (prices[pos] > cash){
-        std::cout<<"You have not money)))\n";
+        //std::cout<<"You have not money)))\n";
         state = ACCEPT;
         return;
         }
