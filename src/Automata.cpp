@@ -2,7 +2,7 @@
 // Created by stoja on 15.12.2020.
 //
 #include "Automata.h"
-#include "windows.h"
+//#include "windows.h"
 #include <iostream>
 Automata::Automata() {
     cash = 0.0;
@@ -64,7 +64,7 @@ void Automata::cook(int pos){
     state = COOK;
     std::cout<<"Wait";
     for(int i = 0; i < 10; i++) {
-        Sleep(500);
+        //Sleep(500);
         std::cout<<".";
     }
     std::cout<<"Your "<<menu[pos];
