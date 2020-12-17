@@ -64,6 +64,7 @@ void Automata::cook(int pos){
     state = COOK;
     std::cout<<"Wait";
     for(int i = 0; i < 10; i++) {
+
         //Sleep(500);
         std::cout<<".";
     }
