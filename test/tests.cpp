@@ -1,38 +1,52 @@
-#include <gtest/gtest.h>
+#include "gtest/gtest.h"
 #include "Automata.h"
 
-TEST(automata, test1) {
-    AUTOMATA a;
-    EXPECT_EQ(OFF, a.getState());
+TEST(on, expect_no_error)
+{
+Automata automata;
+automata.on();
+EXPECT_TRUE(automata.on());
 }
 
-TEST(automata, test2) {
-    AUTOMATA a;
-    a.on();
-    EXPECT_EQ(WAIT, a.getState());
+TEST(off, expect_no_error)
+{
+Automata automata;
+automata.on();
+EXPECT_FALSE(automata.off());
 }
 
-TEST(automata, test3) {
-    AUTOMATA a;
-    a.on();
-    a.coin(100)
-    EXPECT_EQ(100, a.getCash());
+TEST(get_menu, expect_no_error)
+{
+Automata automata;
+automata.on();
+EXPECT_EQ(automata.getState(), STATES::WAIT);
 }
 
-TEST(automata, test4) {
-    AUTOMATA a;
-    a.on();
-    a.coin(100);
-    a.cancel();
-    a.off();
-    EXPECT_EQ(OFF, a.getState());
-}
-
-TEST(automata, test5){
-Automata automata = Automata();
+TEST(choice, expect_no_error)
+{
+Automata automata;
 automata.on();
 automata.coin(50);
-automata.coin(100);
-automata.choice(1);
-EXPECT_EQ(WAIT, automata.getState());
+automata.choice(2);
+EXPECT_EQ(automata.getState(), STATES::WAIT);
+}
+
+
+TEST(cancel, expect_no_error)
+{
+Automata automata;
+automata.on();
+automata.coin(50);
+automata.cancel();
+EXPECT_EQ(automata.getState(), STATES::WAIT);
+}
+
+TEST(finish, expect_no_error)
+{
+Automata automata;
+automata.on();
+automata.coin(500);
+automata.choice(2);
+
+EXPECT_EQ(automata.getState(), STATES::WAIT);
 }
