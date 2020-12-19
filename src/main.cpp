@@ -1,5 +1,5 @@
 //  Copyright 2020 PolinaP
-#include "automata.h"
+#include "Automata.h"
 
 int main()
 {

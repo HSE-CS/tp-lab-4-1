@@ -1,6 +1,6 @@
 //  Copyright 2020 PolinaP
 #include <iostream>
-#include "automata.h"
+#include "Automata.h"
 using namespace std;
 
 Automata::Automata()
