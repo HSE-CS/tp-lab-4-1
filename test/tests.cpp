@@ -3,7 +3,7 @@
 
 TEST(automata, test1) {
 	Automata tst;
-	EXPECT_EQ(OFF, aut.getState());
+	EXPECT_EQ(OFF, tst.getState());
 }
 
 TEST(automata, test2) {
