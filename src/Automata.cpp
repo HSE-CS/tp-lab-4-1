@@ -1,4 +1,5 @@
 #include "Automata.h"
+#include <iostream>
 
 Automata::Automata() {
     cash = 0;
@@ -42,18 +43,23 @@ string Automata::getState() {
     switch (this->state) {
         case OFF: {
             state = "OFF";
+            break;
         }
         case WAIT: {
             state = "WAIT";
+            break;
         }
         case ACCEPT: {
             state = "ACCEPT";
+            break;
         }
         case CHECK: {
             state = "CHECK";
+            break;
         }
         case COOK: {
             state = "COOK";
+            break;
         }
     }
     return state;

@@ -5,8 +5,6 @@ int main()
 {
     Automata automata;
     automata.on();
-    cout << automata.getMenu();
-    automata.coin(500);
-    automata.choice(2);
+    cout << automata.getState();
     return 0;
 }
