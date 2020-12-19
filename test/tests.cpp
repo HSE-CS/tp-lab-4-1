@@ -42,6 +42,6 @@ TEST(lab4, automata_5)
 {
 	Automata atm;
 	atm.on();
-	string state = atm.printState();
+	string state = atm.getState();
 	EXPECT_EQ(state, "WAIT");
 }
